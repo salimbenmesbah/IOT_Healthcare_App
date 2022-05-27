@@ -1,3 +1,5 @@
+package model;
+
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
 import org.semanticweb.owlapi.model.*;
@@ -7,7 +9,7 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 import java.io.File;
 import java.util.LinkedList;
 
-public class ontologie_test {
+public class FuzzyOntology {
     private File file;
     private IRI ontologyIRI;
     private OWLOntology ontology;
@@ -21,7 +23,7 @@ public class ontologie_test {
     private OWLDataFactory df = OWLManager.getOWLDataFactory();
 
     //constructeur
-    public ontologie_test(String link) throws OWLOntologyCreationException {
+    public FuzzyOntology(String link) throws OWLOntologyCreationException {
         file = new File(link);
         classes = new LinkedList<String>();
         individuals = new LinkedList<String>();
@@ -117,7 +119,7 @@ public class ontologie_test {
     }
 
     //add an individual
-    public void addIndividual(String ind, String cls) throws OWLOntologyStorageException{
+    public void addIndividual(String ind, String classe) throws OWLOntologyStorageException{
 
         OWLOntologyManager manager;
         OWLXMLOntologyFormat owlxmlFormat;
@@ -126,8 +128,8 @@ public class ontologie_test {
         owlxmlFormat = new OWLXMLOntologyFormat();
         format = manager.getOntologyFormat(ontology);
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
-        OWLClass simpleTypeClass = df.getOWLClass(":"+cls, pm);
-        System.out.println(simpleTypeClass.getIRI().getFragment());
+        OWLClass simpleTypeClass = df.getOWLClass(":"+classe, pm);
+        //System.out.println(simpleTypeClass.getIRI().getFragment());
         OWLNamedIndividual indi = df.getOWLNamedIndividual(":"+ind, pm);
         //System.out.println(indi.getIRI().getFragment());
         OWLAxiom axiomI = df.getOWLClassAssertionAxiom(simpleTypeClass, indi);
@@ -136,6 +138,28 @@ public class ontologie_test {
         manager.saveOntology(ontology, owlxmlFormat, IRI.create(file.toURI()));
     }
 
+    //link the individuals
+    public void linkIndividuals(String ind1, String ind2, String relation) throws OWLOntologyStorageException{
+
+        OWLOntologyManager manager;
+        OWLXMLOntologyFormat owlxmlFormat;
+        OWLOntologyFormat format;
+        manager = OWLManager.createOWLOntologyManager();
+        owlxmlFormat = new OWLXMLOntologyFormat();
+        format = manager.getOntologyFormat(ontology);
+//System.out.println("1");
+        pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
+///////////////////////////////////////////////////////////////////////////
+        OWLNamedIndividual i1 = df.getOWLNamedIndividual(":"+ind1, pm);
+        OWLNamedIndividual i2 = df.getOWLNamedIndividual(":"+ind2, pm);
+        OWLObjectProperty rel = df.getOWLObjectProperty(":"+relation, pm);
+///////////////////////////////////////////////////////////////////////////
+        OWLObjectPropertyAssertionAxiom axiomOp = df.getOWLObjectPropertyAssertionAxiom(rel, i1, i2);
+        AddAxiom addAxiomOp = new AddAxiom(ontology, axiomOp);
+        manager.applyChange(addAxiomOp);
+///////////////////////////////////////////////////////////////////////////
+        manager.saveOntology(ontology, owlxmlFormat, IRI.create(file.toURI()));
+    }
 
 
 }

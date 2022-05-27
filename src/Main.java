@@ -1,9 +1,9 @@
+import model.FuzzyOntology;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import view.AjouterPatient;
 
 import java.io.File;
 
@@ -13,18 +13,21 @@ public class Main {
         File file = new File("D:\\ontologie\\OntologieFinale.owl");
         OWLOntology o = man.loadOntologyFromOntologyDocument(file);
         //System.out.println(o);
-        ontologie_test o1=new ontologie_test("D:\\ontologie\\OntologieFinale.owl");
+        FuzzyOntology o1=new FuzzyOntology("D:\\ontologie\\OntologieFinale.owl");
         //o1.getFuzzyDataTypes();
-        //o1.addDataProperty("kamel","has_cancer","1");
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        //o1.addIndividual("kamel","doctor");
+        //o1.addDataProperty("kamel","Has_Age","23");
+         /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AjouterPatient frame = new AjouterPatient();
-                frame.setVisible(true);
+                //AjouterPatient frame = new AjouterPatient();
+                //AcceuilPage frame = new AcceuilPage();
+                //ModifierPatient frame = new ModifierPatient();
+                //frame.setVisible(true);
             }
-        });
-
-
-
+        }); */
+        //o1.addIndividual("kamel","doctor");
+        //o1.addIndividual("salim","doctor");
+        //o1.linkIndividuals("kamel","salim","Has_Age");
 
     }
 }

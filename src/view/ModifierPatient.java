@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
-
-
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -20,8 +12,7 @@ import javax.swing.ImageIcon;
 
 import javax.swing.JButton;
 
-public class AjouterPatient extends JFrame {
-
+public class ModifierPatient extends JFrame{
     private JFrame frame;
     private JTextField nom;
     private JTextField age;
@@ -36,11 +27,9 @@ public class AjouterPatient extends JFrame {
     private JTextField imc;
     private JTextField tt;
     private JTextField th;
-    private JButton ajouter, accueil;
+    private JButton modifier, accueil;
 
-
-
-    public AjouterPatient() {
+    public ModifierPatient() {
 
         setBounds(100, 100, 894, 462);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -197,15 +186,15 @@ public class AjouterPatient extends JFrame {
         lblNewLabel_1.setBounds(-33, 0, 205, 64);
         paneln.add(lblNewLabel_1); */
 
-        JLabel titre = new JLabel("Ajouter un patient ");
+        JLabel titre = new JLabel("Modifier un patient ");
         titre.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD , 24));
         titre.setBounds(340, 10, 300, 30);
         //titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         paneln.add(titre);
 
-        ajouter = new JButton("Ajouter");
-        ajouter.setBounds(667, 260, 164, 35);
-        paneln.add(ajouter);
+        modifier = new JButton("Modifier");
+        modifier.setBounds(667, 260, 164, 35);
+        paneln.add(modifier);
         accueil = new JButton("Accueil");
         accueil.setBounds(667, 311, 164, 35);
         paneln.add(accueil);
@@ -319,31 +308,11 @@ public class AjouterPatient extends JFrame {
     }
 
 
-    public JButton getAjouter() {
-        return ajouter;
+    public JButton getModifier() {
+        return modifier;
     }
 
-    public void setAjouter(JButton ajouter) {
-        this.ajouter = ajouter;
+    public void setModifier(JButton modifier) {
+        this.modifier = modifier;
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
