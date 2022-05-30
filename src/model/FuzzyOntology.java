@@ -2,25 +2,51 @@ package model;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
-import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
+import org.semanticweb.owlapi.model.AddAxiom;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLAnnotation;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLDatatype;
+import org.semanticweb.owlapi.model.OWLLiteral;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyFormat;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
+import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 import java.io.File;
 import java.util.LinkedList;
 
 public class FuzzyOntology {
-    private File file;
-    private IRI ontologyIRI;
-    private OWLOntology ontology;
+    File file;
+
     private LinkedList<String> classes;
     private LinkedList<String> individuals;
     private LinkedList<String> objectproperties;
     private LinkedList<String> dataproperties;
     private LinkedList<String> datatypes;
     private LinkedList<String> fuzzydatatypes;
+
+    private OWLOntology ontology;
+
+    private IRI ontologyIRI;
     private PrefixManager pm;
+    private OWLReasoner reasoner;
+    private OWLReasonerFactory reasonerFactory ;
     private OWLDataFactory df = OWLManager.getOWLDataFactory();
+    OWLOntologyManager manager;
 
     //constructeur
     public FuzzyOntology(String link) throws OWLOntologyCreationException {
@@ -31,9 +57,20 @@ public class FuzzyOntology {
         dataproperties = new LinkedList<String>();
         datatypes = new LinkedList<String>();
         fuzzydatatypes = new LinkedList<String>();
-        OWLOntologyManager man = OWLManager.createOWLOntologyManager();
-        ontology = man.loadOntologyFromOntologyDocument(file);
-        ontologyIRI = ontology.getOntologyID().getOntologyIRI();
+
+        try {OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+
+            ontology = manager.loadOntologyFromOntologyDocument(file);
+            ontologyIRI = ontology.getOntologyID().getOntologyIRI();
+            pm = new DefaultPrefixManager(ontologyIRI.toString());
+            reasonerFactory =new StructuralReasonerFactory();
+            reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
+            OWLDataFactory df = OWLManager.getOWLDataFactory();
+
+
+        }catch (OWLOntologyCreationException ex) {}
+
+
     }
 
     //to get classes
@@ -109,6 +146,7 @@ public class FuzzyOntology {
         manager = OWLManager.createOWLOntologyManager();
         owlxmlFormat = new OWLXMLOntologyFormat();
         format = manager.getOntologyFormat(ontology);
+        //System.out.println("1");
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
         OWLNamedIndividual indivi = df.getOWLNamedIndividual(":"+ind, pm);
         OWLDataProperty dpro = df.getOWLDataProperty(":"+dp, pm);
@@ -119,7 +157,7 @@ public class FuzzyOntology {
     }
 
     //add an individual
-    public void addIndividual(String ind, String classe) throws OWLOntologyStorageException{
+    public void addIndividual(String ind, String classes) throws OWLOntologyStorageException{
 
         OWLOntologyManager manager;
         OWLXMLOntologyFormat owlxmlFormat;
@@ -127,8 +165,9 @@ public class FuzzyOntology {
         manager = OWLManager.createOWLOntologyManager();
         owlxmlFormat = new OWLXMLOntologyFormat();
         format = manager.getOntologyFormat(ontology);
+        // System.out.println("1");
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
-        OWLClass simpleTypeClass = df.getOWLClass(":"+classe, pm);
+        OWLClass simpleTypeClass = df.getOWLClass(":"+classes, pm);
         //System.out.println(simpleTypeClass.getIRI().getFragment());
         OWLNamedIndividual indi = df.getOWLNamedIndividual(":"+ind, pm);
         //System.out.println(indi.getIRI().getFragment());

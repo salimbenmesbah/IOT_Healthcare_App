@@ -39,10 +39,10 @@ public class InferenceFloue {
         System.loadLibrary("jsmile");
         Network net = new Network();
         // load the network created by Tutorial1
-        net.readFile("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\réseauxBayésiens\\RéseauBayesienClassique.xdsl");
+        net.readFile("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\réseauxBayésiens\\RéseauBayesienClassique2.xdsl");
         System.out.println("Posteriors with no evidence set:");
-        net.updateBeliefs();
-        printPosteriors(net, 0);
+        //net.updateBeliefs();
+        //printPosteriors(net, 0);
 
         /* ObservedState ob=new ObservedState("Sex", "Male");
         LinkedList<ObservedState> crispevidence = new LinkedList<ObservedState>();

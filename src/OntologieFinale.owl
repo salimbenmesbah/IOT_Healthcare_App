@@ -1,0 +1,2894 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115">
+    <Prefix name="" IRI="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Age"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgeOld"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgeYoung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Asthenia:Tiredness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BMI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BMIobese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BMIslim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Battery_level"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Blurred_Vision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Communication-protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coverage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device_state"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diastolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dry_Skin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Energy_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frequency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frequent_Infections"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frequent_Urination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Geo-point"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Glucose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_Cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_Glucose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_diastolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_systolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High_weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Historic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Increased_Hunger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Increased_Thirst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IoT_characteristics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IoT_devices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Iot_Context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Large_Hip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Large_Waist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Latency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location-address"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_Cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_Glucose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_Weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_diastolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low_systolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medical_Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Memory_capability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network-capability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neurological_Disorders"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persons"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QR_code"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RFID_tags"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Risk_Factors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensing_Measurement_Range"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensing_Response_Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Slow_Wound_Healing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Symptoms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Systolic_bp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Taging_devices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thin_Hip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thin_Waist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time:duration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time:instant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unit_of_measure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Waist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#doctor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#patient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Communicate_via"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#DataGenetaredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Examines"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_DBP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_Height"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_Hip"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_SBP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_Waist"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_Weight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_actuator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_age"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_battery_level"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_blurred_vision"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_bmi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_coverage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_device_state"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_dry_skin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_energy_source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_frequency"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_frequent_infections"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_frequent_urination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_gender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_geo-point"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_glucose"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_historic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_increased_hunger"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_increased_thirst"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_lifetime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_location"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_location-address"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_memory_capability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_networkproperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_neurological_disorders"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_resolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_sensing_measurement_range"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_sensing_response_time"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_sensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_slow_wound_healing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_taging_devices"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_tiredness"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Has_unit_of_measure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Identifies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Monitored_At"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Monitored_during"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Observes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sendsData"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Id_object"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Name_object"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#family_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#first_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#frequency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#gender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_blurred_vision"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_dry_skin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_infections"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_urination"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_hunger"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_thirst"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_neurological_disorders"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_slow_wound_healing"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_tiredness"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#id_protocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#instant"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#latitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#longitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#memory_capability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#netcapability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#ping"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#sensing_measurement_range"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#start_time"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#type_protocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#unit_of_measure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Diagnostic_Final"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Age"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_BMI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Cholesterol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_DBP_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Glucose"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_SBP_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_hip"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_large_hip"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_large_waist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_thin_hip"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_thin_waist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_waist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_weight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#adress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#coverage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#device_state"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#end_time"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#energy_source"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_high_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_high_weight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_low_height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_low_weight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_obesebmi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_oldage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_slimbmi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_youngage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#high_cholesterol_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#high_dbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#high_glucose_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#high_sbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#low_cholesterol_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#low_dbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#low_glucose_rate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#low_sbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Has_large_hip"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Has_large_waist"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Has_thin_hip"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Has_thin_waist"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_high_height"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_high_weight"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_low_height"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_low_weight"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_obesebmi"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_oldage"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_slimbmi"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#has_youngage"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#high_cholesterol_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#high_dbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#high_glucose_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#high_sbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#low_cholesterol_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#low_dbp_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#low_glucose_rate"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#low_sbp_rate"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AgeOld"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Age"/>
+            <Datatype IRI="#has_oldage"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AgeYoung"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Age"/>
+            <Datatype IRI="#has_youngage"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BMIobese"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_BMI"/>
+            <Datatype IRI="#has_obesebmi"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BMIslim"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_BMI"/>
+            <Datatype IRI="#has_slimbmi"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_Cholesterol"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Cholesterol"/>
+            <Datatype IRI="#high_cholesterol_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_Glucose"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Glucose"/>
+            <Datatype IRI="#high_glucose_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_Height"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_height"/>
+            <Datatype IRI="#has_high_height"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_diastolic_bp"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_DBP_rate"/>
+            <Datatype IRI="#high_dbp_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_systolic_bp"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_SBP_rate"/>
+            <Datatype IRI="#high_sbp_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#High_weight"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_weight"/>
+            <Datatype IRI="#has_high_weight"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Large_Hip"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_hip"/>
+            <Datatype IRI="#Has_large_hip"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Large_Waist"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_waist"/>
+            <Datatype IRI="#Has_large_waist"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_Cholesterol"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Cholesterol"/>
+            <Datatype IRI="#low_cholesterol_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_Glucose"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_Glucose"/>
+            <Datatype IRI="#low_glucose_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_Height"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_height"/>
+            <Datatype IRI="#has_low_height"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_Weight"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_weight"/>
+            <Datatype IRI="#has_low_weight"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_diastolic_bp"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_DBP_rate"/>
+            <Datatype IRI="#low_dbp_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Low_systolic_bp"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_SBP_rate"/>
+            <Datatype IRI="#low_sbp_rate"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Thin_Hip"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_hip"/>
+            <Datatype IRI="#Has_thin_hip"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Thin_Waist"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Has_waist"/>
+            <Datatype IRI="#Has_thin_waist"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Accuracy"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#IoT_devices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Age"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgeOld"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgeYoung"/>
+        <Class IRI="#Age"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Asthenia:Tiredness"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BMI"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BMIobese"/>
+        <Class IRI="#BMI"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BMIslim"/>
+        <Class IRI="#BMI"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Battery_level"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Blurred_Vision"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cholesterol"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Communication-protocol"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coverage"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device_state"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diastolic_bp"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dry_Skin"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Energy_source"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frequency"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frequent_Infections"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frequent_Urination"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gender"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Geo-point"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Glucose"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Height"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_Cholesterol"/>
+        <Class IRI="#Cholesterol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_Glucose"/>
+        <Class IRI="#Glucose"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_Height"/>
+        <Class IRI="#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_diastolic_bp"/>
+        <Class IRI="#Diastolic_bp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_systolic_bp"/>
+        <Class IRI="#Systolic_bp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High_weight"/>
+        <Class IRI="#Weight"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hip"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Historic"/>
+        <Class IRI="#Iot_Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Increased_Hunger"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Increased_Thirst"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Large_Hip"/>
+        <Class IRI="#Hip"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Large_Waist"/>
+        <Class IRI="#Waist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Latency"/>
+        <Class IRI="#NetworkProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lifetime"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#Iot_Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location-address"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_Cholesterol"/>
+        <Class IRI="#Cholesterol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_Glucose"/>
+        <Class IRI="#Glucose"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_Height"/>
+        <Class IRI="#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_Weight"/>
+        <Class IRI="#Weight"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_diastolic_bp"/>
+        <Class IRI="#Diastolic_bp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low_systolic_bp"/>
+        <Class IRI="#Systolic_bp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Memory_capability"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Network-capability"/>
+        <Class IRI="#NetworkProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkProperty"/>
+        <Class IRI="#Iot_Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neurological_Disorders"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QR_code"/>
+        <Class IRI="#Taging_devices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RFID_tags"/>
+        <Class IRI="#Taging_devices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resolution"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensing_Measurement_Range"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensing_Response_Time"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#IoT_devices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Slow_Wound_Healing"/>
+        <Class IRI="#Symptoms"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Systolic_bp"/>
+        <Class IRI="#Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Taging_devices"/>
+        <Class IRI="#IoT_devices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thin_Hip"/>
+        <Class IRI="#Hip"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thin_Waist"/>
+        <Class IRI="#Waist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#Iot_Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time:duration"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time:instant"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unit_of_measure"/>
+        <Class IRI="#IoT_characteristics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waist"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weight"/>
+        <Class IRI="#Risk_Factors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#doctor"/>
+        <Class IRI="#Persons"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#patient"/>
+        <Class IRI="#Persons"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Communicate_via"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Examines"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_accuracy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_actuator"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_age"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_blurred_vision"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_bmi"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_cholesterol"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_coverage"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_device_state"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_dry_skin"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_energy_source"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_frequency"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_frequent_infections"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_frequent_urination"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_gender"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_geo-point"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_historic"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_increased_hunger"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_increased_thirst"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_lifetime"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_location"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_location-address"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_memory_capability"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_networkproperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_neurological_disorders"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_object"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_resolution"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_sensing_measurement_range"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_sensing_response_time"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_sensor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_slow_wound_healing"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_taging_devices"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_tiredness"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Has_unit_of_measure"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Identifies"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Observes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#sendsData"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Communicate_via"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#DataGenetaredBy"/>
+        <Class IRI="#Measurement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Examines"/>
+        <Class IRI="#doctor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_DBP"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_Height"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_Hip"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_SBP"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_Waist"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_Weight"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_accuracy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_actuator"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_age"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_battery_level"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_blurred_vision"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_bmi"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_cholesterol"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_coverage"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_device_state"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_dry_skin"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_energy_source"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_frequency"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_frequent_infections"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_frequent_urination"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_gender"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_geo-point"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_glucose"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_historic"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_increased_hunger"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_increased_thirst"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_lifetime"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_location"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_location-address"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_memory_capability"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_networkproperty"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_neurological_disorders"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_object"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_resolution"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_sensing_measurement_range"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_sensing_response_time"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_sensor"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_slow_wound_healing"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_taging_devices"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_tiredness"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Has_unit_of_measure"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#doctor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Cholesterol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Diastolic_bp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Glucose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Measurement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Systolic_bp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Cholesterol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Diastolic_bp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Glucose"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Measurement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Systolic_bp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Observes"/>
+        <Class IRI="#doctor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#sendsData"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Communicate_via"/>
+        <Class IRI="#Communication-protocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#DataGenetaredBy"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Examines"/>
+        <Class IRI="#patient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_DBP"/>
+        <Class IRI="#Diastolic_bp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_Height"/>
+        <Class IRI="#Height"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_Hip"/>
+        <Class IRI="#Hip"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_SBP"/>
+        <Class IRI="#Systolic_bp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_Waist"/>
+        <Class IRI="#Waist"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_Weight"/>
+        <Class IRI="#Weight"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_accuracy"/>
+        <Class IRI="#Accuracy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_actuator"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_age"/>
+        <Class IRI="#Age"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_battery_level"/>
+        <Class IRI="#Battery_level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_blurred_vision"/>
+        <Class IRI="#Blurred_Vision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_bmi"/>
+        <Class IRI="#BMI"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_cholesterol"/>
+        <Class IRI="#Cholesterol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_coverage"/>
+        <Class IRI="#Coverage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_device_state"/>
+        <Class IRI="#Device_state"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_dry_skin"/>
+        <Class IRI="#Dry_Skin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_energy_source"/>
+        <Class IRI="#Energy_source"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_frequency"/>
+        <Class IRI="#Frequency"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_frequent_infections"/>
+        <Class IRI="#Frequent_Infections"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_frequent_urination"/>
+        <Class IRI="#Frequent_Urination"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_gender"/>
+        <Class IRI="#Gender"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_geo-point"/>
+        <Class IRI="#Geo-point"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_glucose"/>
+        <Class IRI="#Glucose"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_historic"/>
+        <Class IRI="#Historic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_increased_hunger"/>
+        <Class IRI="#Increased_Hunger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_increased_thirst"/>
+        <Class IRI="#Increased_Thirst"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_lifetime"/>
+        <Class IRI="#Lifetime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_location"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_location-address"/>
+        <Class IRI="#Location-address"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_memory_capability"/>
+        <Class IRI="#Memory_capability"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_networkproperty"/>
+        <Class IRI="#NetworkProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_neurological_disorders"/>
+        <Class IRI="#Neurological_Disorders"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_object"/>
+        <Class IRI="#Medical_Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_resolution"/>
+        <Class IRI="#Resolution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_sensing_measurement_range"/>
+        <Class IRI="#Sensing_Measurement_Range"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_sensing_response_time"/>
+        <Class IRI="#Sensing_Response_Time"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_sensor"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_slow_wound_healing"/>
+        <Class IRI="#Slow_Wound_Healing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_taging_devices"/>
+        <Class IRI="#Taging_devices"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_tiredness"/>
+        <Class IRI="#Asthenia:Tiredness"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Has_unit_of_measure"/>
+        <Class IRI="#Unit_of_measure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Asthenia:Tiredness"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Blurred_Vision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Dry_Skin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Frequent_Infections"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Frequent_Urination"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Increased_Hunger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Increased_Thirst"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Neurological_Disorders"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Slow_Wound_Healing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Identifies"/>
+        <Class IRI="#Symptoms"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Monitored_At"/>
+        <Class IRI="#Time:instant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Monitored_during"/>
+        <Class IRI="#Time:duration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Observes"/>
+        <Class IRI="#Cholesterol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Observes"/>
+        <Class IRI="#Diastolic_bp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Observes"/>
+        <Class IRI="#Glucose"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Observes"/>
+        <Class IRI="#Systolic_bp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#sendsData"/>
+        <Class IRI="#doctor"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Id_object"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Name_object"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#family_name"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#first_name"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#frequency"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#gender"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_blurred_vision"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_dry_skin"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_infections"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_urination"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_hunger"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_thirst"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_neurological_disorders"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_slow_wound_healing"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_tiredness"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#id_protocol"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#instant"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#latitude"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#lifetime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#longitude"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#memory_capability"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#netcapability"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#ping"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#sensing_measurement_range"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#start_time"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#type_protocol"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#unit_of_measure"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_Age"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_BMI"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_Cholesterol"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_DBP_rate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_SBP_rate"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_height"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_hip"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_waist"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_weight"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Id_object"/>
+        <Class IRI="#Medical_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Name_object"/>
+        <Class IRI="#Medical_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#family_name"/>
+        <Class IRI="#patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#first_name"/>
+        <Class IRI="#patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#frequency"/>
+        <Class IRI="#Frequency"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#gender"/>
+        <Class IRI="#Gender"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_blurred_vision"/>
+        <Class IRI="#Blurred_Vision"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_dry_skin"/>
+        <Class IRI="#Dry_Skin"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_infections"/>
+        <Class IRI="#Frequent_Infections"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_urination"/>
+        <Class IRI="#Frequent_Urination"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_hunger"/>
+        <Class IRI="#Increased_Hunger"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_thirst"/>
+        <Class IRI="#Increased_Thirst"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_neurological_disorders"/>
+        <Class IRI="#Neurological_Disorders"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_slow_wound_healing"/>
+        <Class IRI="#Slow_Wound_Healing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_tiredness"/>
+        <Class IRI="#Asthenia:Tiredness"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#id_protocol"/>
+        <Class IRI="#Communication-protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#instant"/>
+        <Class IRI="#Time:instant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#latitude"/>
+        <Class IRI="#Geo-point"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#lifetime"/>
+        <Class IRI="#Lifetime"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#longitude"/>
+        <Class IRI="#Geo-point"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#memory_capability"/>
+        <Class IRI="#Memory_capability"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#netcapability"/>
+        <Class IRI="#Network-capability"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#ping"/>
+        <Class IRI="#Latency"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#sensing_measurement_range"/>
+        <Class IRI="#Sensing_Measurement_Range"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#start_time"/>
+        <Class IRI="#Time:duration"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#type_protocol"/>
+        <Class IRI="#Communication-protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#unit_of_measure"/>
+        <Class IRI="#Unit_of_measure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Diagnostic_Final"/>
+        <Class IRI="#patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_Age"/>
+        <Class IRI="#Age"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_BMI"/>
+        <Class IRI="#BMI"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_Cholesterol"/>
+        <Class IRI="#Cholesterol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_DBP_rate"/>
+        <Class IRI="#Diastolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_Glucose"/>
+        <Class IRI="#Glucose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_SBP_rate"/>
+        <Class IRI="#Systolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_height"/>
+        <Class IRI="#Height"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_hip"/>
+        <Class IRI="#Hip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_large_hip"/>
+        <Class IRI="#Large_Hip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_large_waist"/>
+        <Class IRI="#Large_Waist"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_thin_hip"/>
+        <Class IRI="#Thin_Hip"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_thin_waist"/>
+        <Class IRI="#Thin_Waist"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_waist"/>
+        <Class IRI="#Waist"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Has_weight"/>
+        <Class IRI="#Weight"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#adress"/>
+        <Class IRI="#Location-address"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coverage"/>
+        <Class IRI="#Coverage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#device_state"/>
+        <Class IRI="#Device_state"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#end_time"/>
+        <Class IRI="#Time:duration"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#energy_source"/>
+        <Class IRI="#Energy_source"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_high_height"/>
+        <Class IRI="#High_Height"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_high_weight"/>
+        <Class IRI="#High_weight"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_low_height"/>
+        <Class IRI="#Low_Height"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_low_weight"/>
+        <Class IRI="#Low_Weight"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_obesebmi"/>
+        <Class IRI="#BMIobese"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_oldage"/>
+        <Class IRI="#AgeOld"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_slimbmi"/>
+        <Class IRI="#BMIslim"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_youngage"/>
+        <Class IRI="#AgeYoung"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#high_cholesterol_rate"/>
+        <Class IRI="#High_Cholesterol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#high_dbp_rate"/>
+        <Class IRI="#High_diastolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#high_glucose_rate"/>
+        <Class IRI="#High_Glucose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#high_sbp_rate"/>
+        <Class IRI="#High_systolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#low_cholesterol_rate"/>
+        <Class IRI="#Low_Cholesterol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#low_dbp_rate"/>
+        <Class IRI="#Low_diastolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#low_glucose_rate"/>
+        <Class IRI="#Low_Glucose"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#low_sbp_rate"/>
+        <Class IRI="#Low_systolic_bp"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Id_object"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#Name_object"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#family_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#first_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#frequency"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#gender"/>
+        <DataUnionOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">man</Literal>
+            </DataOneOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">woman</Literal>
+            </DataOneOf>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_blurred_vision"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_dry_skin"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_infections"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_frequent_urination"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_hunger"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_increased_thirst"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_neurological_disorders"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_slow_wound_healing"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#has_tiredness"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#id_protocol"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#instant"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#latitude"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#lifetime"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#longitude"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#memory_capability"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#netcapability"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#ping"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#sensing_measurement_range"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#start_time"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#type_protocol"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/pc-service/ontologies/2022/3/Notre_Ontologie_Diabète_IomT#unit_of_measure"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Diagnostic_Final"/>
+        <DataUnionOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">false</Literal>
+            </DataOneOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">true</Literal>
+            </DataOneOf>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_Age"/>
+        <DataUnionOf>
+            <Datatype IRI="#has_oldage"/>
+            <Datatype IRI="#has_youngage"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_BMI"/>
+        <DataUnionOf>
+            <Datatype IRI="#has_obesebmi"/>
+            <Datatype IRI="#has_slimbmi"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_Cholesterol"/>
+        <DataUnionOf>
+            <Datatype IRI="#high_cholesterol_rate"/>
+            <Datatype IRI="#low_cholesterol_rate"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_DBP_rate"/>
+        <DataUnionOf>
+            <Datatype IRI="#high_dbp_rate"/>
+            <Datatype IRI="#low_dbp_rate"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_Glucose"/>
+        <DataUnionOf>
+            <Datatype IRI="#high_glucose_rate"/>
+            <Datatype IRI="#low_glucose_rate"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_SBP_rate"/>
+        <DataUnionOf>
+            <Datatype IRI="#high_sbp_rate"/>
+            <Datatype IRI="#low_sbp_rate"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_height"/>
+        <DataUnionOf>
+            <Datatype IRI="#has_high_height"/>
+            <Datatype IRI="#has_low_height"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_hip"/>
+        <DataUnionOf>
+            <Datatype IRI="#Has_large_hip"/>
+            <Datatype IRI="#Has_thin_hip"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_large_hip"/>
+        <Datatype IRI="#Has_large_hip"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_large_waist"/>
+        <Datatype IRI="#Has_large_waist"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_thin_hip"/>
+        <Datatype IRI="#Has_thin_hip"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_thin_waist"/>
+        <Datatype IRI="#Has_thin_waist"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_waist"/>
+        <DataUnionOf>
+            <Datatype IRI="#Has_large_waist"/>
+            <Datatype IRI="#Has_thin_waist"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Has_weight"/>
+        <DataUnionOf>
+            <Datatype IRI="#has_high_weight"/>
+            <Datatype IRI="#has_low_weight"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#adress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#coverage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#device_state"/>
+        <DataUnionOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">off </Literal>
+            </DataOneOf>
+            <DataOneOf>
+                <Literal datatypeIRI="&rdf;PlainLiteral">on</Literal>
+            </DataOneOf>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#end_time"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#energy_source"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_high_height"/>
+        <Datatype IRI="#has_high_height"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_high_weight"/>
+        <Datatype IRI="#has_high_weight"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_low_height"/>
+        <Datatype IRI="#has_low_height"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_low_weight"/>
+        <Datatype IRI="#has_low_weight"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_obesebmi"/>
+        <Datatype IRI="#has_obesebmi"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_oldage"/>
+        <Datatype IRI="#has_oldage"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_slimbmi"/>
+        <Datatype IRI="#has_slimbmi"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_youngage"/>
+        <Datatype IRI="#has_youngage"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#high_cholesterol_rate"/>
+        <Datatype IRI="#high_cholesterol_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#high_dbp_rate"/>
+        <Datatype IRI="#high_dbp_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#high_glucose_rate"/>
+        <Datatype IRI="#high_glucose_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#high_sbp_rate"/>
+        <Datatype IRI="#high_sbp_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#low_cholesterol_rate"/>
+        <Datatype IRI="#low_cholesterol_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#low_dbp_rate"/>
+        <Datatype IRI="#low_dbp_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#low_glucose_rate"/>
+        <Datatype IRI="#low_glucose_rate"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#low_sbp_rate"/>
+        <Datatype IRI="#low_sbp_rate"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#Has_large_hip</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;39.52&quot; b=&quot;48.98&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#Has_large_waist</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;33.74&quot; b=&quot;43.55&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#Has_thin_hip</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;39.52&quot; b=&quot;48.98&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#Has_thin_waist</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;33.74&quot; b=&quot;43.55&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_high_height</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;62.82&quot; b=&quot;69.45&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_high_weight</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;153.99&quot; b=&quot;220.55&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_low_height</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;62.82&quot; b=&quot;69.45&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_low_weight</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;153.99&quot; b=&quot;220.55&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_obesebmi</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;24.74&quot; b=&quot;35.94&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_oldage</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;34&quot; b=&quot;63&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_slimbmi</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;24.74&quot; b=&quot;35.94&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#has_youngage</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;34&quot; b=&quot;63&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#high_cholesterol_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;180.36&quot; b=&quot;251.11&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#high_dbp_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;73.23&quot; b=&quot;94.89&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#high_glucose_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;89.97&quot; b=&quot;242.93&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#high_sbp_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;125.14&quot; b=&quot;164.15&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#low_cholesterol_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;180.36&quot; b=&quot;251.11&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#low_dbp_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;73.23&quot; b=&quot;94.89&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#low_glucose_rate</IRI>
+        <Literal datatypeIRI="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115#low_glucose_rate">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;89.97&quot; b=&quot;242.93&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#low_sbp_rate</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;125.14&quot; b=&quot;164.15&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <DatatypeDefinition>
+        <Datatype IRI="#Has_large_hip"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">30.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">64.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#Has_large_waist"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">26.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">56.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#Has_thin_hip"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">30.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">64.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#Has_thin_waist"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">26.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">56.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_high_height"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">52.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">76.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_high_weight"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">99.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">325.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_low_height"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">52.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">76.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_low_weight"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">99.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">325.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_obesebmi"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">16.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">55.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_oldage"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">19.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">92.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_slimbmi"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">16.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">55.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#has_youngage"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">19.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">92.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#high_cholesterol_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">78.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">443.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#high_dbp_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">48.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">124.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#high_glucose_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">48.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">385.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#high_sbp_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">90.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">250.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#low_cholesterol_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">78.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">443.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#low_dbp_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">48.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">124.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#low_glucose_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">48.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">385.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#low_sbp_rate"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">90.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">250.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
