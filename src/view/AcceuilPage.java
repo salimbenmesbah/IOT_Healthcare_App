@@ -7,7 +7,7 @@ public class AcceuilPage extends JFrame{
     private JTextField recherche;
     private JTable table;
 
-    JButton ajouter,modifier,inference,search,afficher,chercher1;
+    public JButton ajouter,modifier,inference,search,afficher,chercher1;
 
     public AcceuilPage(){
         this.setResizable(false);
@@ -67,9 +67,11 @@ public class AcceuilPage extends JFrame{
         ajouter = new JButton("Ajouter");
         ajouter.setBounds(421, 94, 100, 40);
         panel.add(ajouter);
+
         search = new JButton("Supprimer");
         search.setBounds(648, 94, 100, 40);
         panel.add(search);
+
         this.setVisible(true);
         afficher = new JButton("Afficher");
         afficher.setBounds(311, 94, 100, 40);
