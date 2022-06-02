@@ -13,8 +13,8 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
 
-//        InferencePatient frame = new InferencePatient();
-//        frame.setVisible(true);
+        InferencePatient frame = new InferencePatient();
+        frame.setVisible(true);
 //        AjouterPatient frame2 = new AjouterPatient();
 //        frame2.setVisible(true);
 //        AcceuilPage frame3 = new AcceuilPage();

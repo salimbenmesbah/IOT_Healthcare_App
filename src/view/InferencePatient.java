@@ -200,10 +200,6 @@ public class InferencePatient extends JFrame {
         th.setBounds(667, 152, 164, 29);
         paneln.add(th);
 
-        JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setIcon(new ImageIcon(AjouterPatient.class.getResource("/images/logoi.png")));
-        lblNewLabel_1.setBounds(-33, 0, 205, 64);
-        paneln.add(lblNewLabel_1);
 
         JLabel titre = new JLabel("Diagnostiquer Patient ");
         titre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));

@@ -43,17 +43,13 @@ public class prediction extends JFrame{
         panel.add(lblNewLabel);
 
         monaffichage = new JTextArea();
-        monaffichage.setFont(new Font("Monospaced", Font.ITALIC, 14));
+        monaffichage.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
         monaffichage.setBounds(10, 135, 400, 171);
         panel.add(monaffichage);
 
-        JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setIcon(new ImageIcon(prediction.class.getResource("/images/logoi.png")));
-        lblNewLabel_1.setBounds(-42, 10, 198, 65);
-        panel.add(lblNewLabel_1);
 
         JLabel titre = new JLabel("Résultat");
-        titre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+        titre.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 18));
 
         titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         titre.setBounds(309, 10, 101, 44);
@@ -63,9 +59,6 @@ public class prediction extends JFrame{
         retour.setBounds(55, 437, 133, 44);
         panel.add(retour);
 
-        visiong = new JButton("Vision graphique ");
-        visiong.setBounds(226, 437, 133, 44);
-        panel.add(visiong);
 
 
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

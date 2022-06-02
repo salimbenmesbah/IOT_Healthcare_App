@@ -21,12 +21,15 @@ import org.semanticweb.owlapi.model.OWLOntologyFormat;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
+import org.semanticweb.owlapi.util.OWLEntityRemover;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class FuzzyOntology {
@@ -44,7 +47,7 @@ public class FuzzyOntology {
     private IRI ontologyIRI;
     private PrefixManager pm;
     private OWLReasoner reasoner;
-    private OWLReasonerFactory reasonerFactory ;
+    private OWLReasonerFactory reasonerFactory;
     private OWLDataFactory df = OWLManager.getOWLDataFactory();
     OWLOntologyManager manager;
 
@@ -58,34 +61,39 @@ public class FuzzyOntology {
         datatypes = new LinkedList<String>();
         fuzzydatatypes = new LinkedList<String>();
 
-        try {OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        try {
+            OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 
             ontology = manager.loadOntologyFromOntologyDocument(file);
             ontologyIRI = ontology.getOntologyID().getOntologyIRI();
             pm = new DefaultPrefixManager(ontologyIRI.toString());
-            reasonerFactory =new StructuralReasonerFactory();
+            reasonerFactory = new StructuralReasonerFactory();
             reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
             OWLDataFactory df = OWLManager.getOWLDataFactory();
 
 
-        }catch (OWLOntologyCreationException ex) {}
+        } catch (OWLOntologyCreationException ex) {
+        }
 
 
     }
 
     //to get classes
-    public void getClasses(){
+    public void getClasses() {
         for (OWLClass i : ontology.getClassesInSignature(true)) {
-            classes.add(i.getIRI().getFragment());}
+            classes.add(i.getIRI().getFragment());
+        }
 
         for (String aClass : classes) {
             System.out.println(aClass);
         }
     }
+
     //get individuals
-    public void getIndividuals(){
+    public void getIndividuals() {
         for (OWLNamedIndividual i : ontology.getIndividualsInSignature(true)) {
-            individuals.add(i.getIRI().getFragment());}
+            individuals.add(i.getIRI().getFragment());
+        }
 
         for (String individual : individuals) {
             System.out.println(individual);
@@ -93,9 +101,10 @@ public class FuzzyOntology {
     }
 
     //to get object properties
-    public void getObjectProperties(){
+    public void getObjectProperties() {
         for (OWLObjectProperty i : ontology.getObjectPropertiesInSignature(true)) {
-            objectproperties.add(i.getIRI().getFragment());}
+            objectproperties.add(i.getIRI().getFragment());
+        }
 
         for (String objectproperty : objectproperties) {
             System.out.println(objectproperty);
@@ -103,9 +112,10 @@ public class FuzzyOntology {
     }
 
     // to get data properties
-    public void getDataProperties(){
+    public void getDataProperties() {
         for (OWLDataProperty i : ontology.getDataPropertiesInSignature(true)) {
-            dataproperties.add(i.getIRI().getFragment());}
+            dataproperties.add(i.getIRI().getFragment());
+        }
 
         for (String dataproperty : dataproperties) {
             System.out.println(dataproperty);
@@ -113,9 +123,10 @@ public class FuzzyOntology {
     }
 
     //to get datatypes
-    public void getDataTypes(){
+    public void getDataTypes() {
         for (OWLDatatype i : ontology.getDatatypesInSignature(true)) {
-            datatypes.add(i.getIRI().getFragment());}
+            datatypes.add(i.getIRI().getFragment());
+        }
 
         for (String datatype : datatypes) {
             System.out.println(datatype);
@@ -123,15 +134,16 @@ public class FuzzyOntology {
     }
 
     //to get the fuzzy data types
-    public void getFuzzyDataTypes(){
+    public void getFuzzyDataTypes() {
         for (OWLDatatype d : ontology.getDatatypesInSignature(true)) {
             for (OWLAnnotation annotation1 : d.getAnnotations(ontology)) {
-                if ((annotation1.getProperty().getIRI().getFragment().contains("fuzzyLabel"))){
+                if ((annotation1.getProperty().getIRI().getFragment().contains("fuzzyLabel"))) {
                     // fuzzydatatypes.add(d.getIRI().getFragment());
                     OWLLiteral literal = (OWLLiteral) annotation1.getValue();
                     String literalString = literal.getLiteral();
                     fuzzydatatypes.add(literalString);
-                }}
+                }
+            }
         }
         for (String fuzzydatatype : fuzzydatatypes) {
             System.out.println(fuzzydatatype);
@@ -139,7 +151,7 @@ public class FuzzyOntology {
     }
 
     //add data property
-    public void addDataProperty(String ind,String dp, String v) throws OWLOntologyStorageException{
+    public void addDataProperty(String ind, String dp, String v) throws OWLOntologyStorageException {
         OWLOntologyManager manager;
         OWLXMLOntologyFormat owlxmlFormat;
         OWLOntologyFormat format;
@@ -148,8 +160,8 @@ public class FuzzyOntology {
         format = manager.getOntologyFormat(ontology);
         //System.out.println("1");
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
-        OWLNamedIndividual indivi = df.getOWLNamedIndividual(":"+ind, pm);
-        OWLDataProperty dpro = df.getOWLDataProperty(":"+dp, pm);
+        OWLNamedIndividual indivi = df.getOWLNamedIndividual(":" + ind, pm);
+        OWLDataProperty dpro = df.getOWLDataProperty(":" + dp, pm);
         OWLDataPropertyAssertionAxiom axiomDp = df.getOWLDataPropertyAssertionAxiom(dpro, indivi, v);
         AddAxiom addAxiomDp = new AddAxiom(ontology, axiomDp);
         manager.applyChange(addAxiomDp);
@@ -157,7 +169,7 @@ public class FuzzyOntology {
     }
 
     //add an individual
-    public void addIndividual(String ind, String classes) throws OWLOntologyStorageException{
+    public void addIndividual(String ind, String classes) throws OWLOntologyStorageException {
 
         OWLOntologyManager manager;
         OWLXMLOntologyFormat owlxmlFormat;
@@ -167,9 +179,9 @@ public class FuzzyOntology {
         format = manager.getOntologyFormat(ontology);
         // System.out.println("1");
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
-        OWLClass simpleTypeClass = df.getOWLClass(":"+classes, pm);
+        OWLClass simpleTypeClass = df.getOWLClass(":" + classes, pm);
         //System.out.println(simpleTypeClass.getIRI().getFragment());
-        OWLNamedIndividual indi = df.getOWLNamedIndividual(":"+ind, pm);
+        OWLNamedIndividual indi = df.getOWLNamedIndividual(":" + ind, pm);
         //System.out.println(indi.getIRI().getFragment());
         OWLAxiom axiomI = df.getOWLClassAssertionAxiom(simpleTypeClass, indi);
         AddAxiom addAxiomI = new AddAxiom(ontology, axiomI);
@@ -178,7 +190,7 @@ public class FuzzyOntology {
     }
 
     //link the individuals
-    public void linkIndividuals(String ind1, String ind2, String relation) throws OWLOntologyStorageException{
+    public void linkIndividuals(String ind1, String ind2, String relation) throws OWLOntologyStorageException {
 
         OWLOntologyManager manager;
         OWLXMLOntologyFormat owlxmlFormat;
@@ -189,9 +201,9 @@ public class FuzzyOntology {
 //System.out.println("1");
         pm = new DefaultPrefixManager(ontologyIRI.toString().concat("#"));
 ///////////////////////////////////////////////////////////////////////////
-        OWLNamedIndividual i1 = df.getOWLNamedIndividual(":"+ind1, pm);
-        OWLNamedIndividual i2 = df.getOWLNamedIndividual(":"+ind2, pm);
-        OWLObjectProperty rel = df.getOWLObjectProperty(":"+relation, pm);
+        OWLNamedIndividual i1 = df.getOWLNamedIndividual(":" + ind1, pm);
+        OWLNamedIndividual i2 = df.getOWLNamedIndividual(":" + ind2, pm);
+        OWLObjectProperty rel = df.getOWLObjectProperty(":" + relation, pm);
 ///////////////////////////////////////////////////////////////////////////
         OWLObjectPropertyAssertionAxiom axiomOp = df.getOWLObjectPropertyAssertionAxiom(rel, i1, i2);
         AddAxiom addAxiomOp = new AddAxiom(ontology, axiomOp);
@@ -200,5 +212,28 @@ public class FuzzyOntology {
         manager.saveOntology(ontology, owlxmlFormat, IRI.create(file.toURI()));
     }
 
+    public void DELETE(String nameClass, String nameP) throws OWLOntologyCreationException, OWLOntologyStorageException {
+        manager = OWLManager.createOWLOntologyManager();
+        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
+        OWLDataProperty dp;
+        OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
 
+        OWLEntityRemover removerToDeleteAlreadyAssignedInds = new OWLEntityRemover(manager, Collections.singleton(ontology));
+        for (OWLClass cls : ontology.getClassesInSignature()) {
+            if (cls.getIRI().getFragment().equals(nameClass)) {
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("Number of instances of class" + nameClass + " is  " + instances.getFlattened().size());
+                for (OWLNamedIndividual ind : instances.getFlattened()) {
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals(nameP)) {
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                    }
+                }
+                manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                removerToDeleteAlreadyAssignedInds.reset();
+                manager.saveOntology(ontology);
+            }
+        }
+    }
 }
