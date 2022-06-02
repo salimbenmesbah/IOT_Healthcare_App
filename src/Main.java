@@ -7,13 +7,19 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import smile.Network;
 import view.AcceuilPage;
+import view.AjouterPatient;
+import view.InferencePatient;
+import view.ModifierPatient;
 
 import java.io.File;
 
 public class Main {
     public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
 
-
+        InferencePatient frame = new InferencePatient();
+        frame.setVisible(true);
+        AjouterPatient frame2 = new AjouterPatient();
+        frame2.setVisible(true);
          /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //AjouterPatient frame = new AjouterPatient();

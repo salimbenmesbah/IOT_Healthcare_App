@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="ajouter patient bouton" />
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit1">
+      <change afterPath="$PROJECT_DIR$/src/view/InferencePatient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/prediction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ontologie/catalog-v001.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ontologie/catalog-v001.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://D:/JAVA/java15/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -153,14 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653912946685</updated>
     </task>
-    <task id="LOCAL-00004" summary="ajouter patient bouton">
-      <created>1654116886740</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654116886740</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,8 +179,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit1" />
-    <MESSAGE value="ajouter patient bouton" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajouter patient bouton" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
