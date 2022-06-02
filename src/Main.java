@@ -20,6 +20,10 @@ public class Main {
         frame.setVisible(true);
         AjouterPatient frame2 = new AjouterPatient();
         frame2.setVisible(true);
+        AcceuilPage frame3 = new AcceuilPage();
+        frame3.setVisible(true);
+        ModifierPatient frame4 = new ModifierPatient();
+        frame4.setVisible(true);
          /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //AjouterPatient frame = new AjouterPatient();
