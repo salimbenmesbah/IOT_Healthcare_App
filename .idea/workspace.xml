@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit1">
-      <change afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AcceuilPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AcceuilPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="ajouter patient bouton" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653912946685</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ajouter patient bouton">
+      <created>1654116886740</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654116886740</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,7 +177,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
+    <MESSAGE value="ajouter patient bouton" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajouter patient bouton" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
