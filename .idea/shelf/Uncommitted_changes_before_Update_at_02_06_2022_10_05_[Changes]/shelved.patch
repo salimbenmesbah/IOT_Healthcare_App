@@ -1,0 +1,438 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import model.FuzzyOntology;\r\nimport model.Patient;\r\nimport org.semanticweb.owlapi.apibinding.OWLManager;\r\nimport org.semanticweb.owlapi.model.OWLOntology;\r\nimport org.semanticweb.owlapi.model.OWLOntologyCreationException;\r\nimport org.semanticweb.owlapi.model.OWLOntologyManager;\r\nimport org.semanticweb.owlapi.model.OWLOntologyStorageException;\r\nimport smile.Network;\r\nimport view.AcceuilPage;\r\n\r\nimport java.io.File;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {\r\n\r\n\r\n         /* java.awt.EventQueue.invokeLater(new Runnable() {\r\n            public void run() {\r\n                //AjouterPatient frame = new AjouterPatient();\r\n                //AcceuilPage frame = new AcceuilPage();\r\n                //ModifierPatient frame = new ModifierPatient();\r\n                //frame.setVisible(true);\r\n            }\r\n        }); */\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 4f7d999bd8c197ea86242602c562d67d165c91b1)
++++ b/src/Main.java	(date 1654117196014)
+@@ -7,13 +7,19 @@
+ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+ import smile.Network;
+ import view.AcceuilPage;
++import view.AjouterPatient;
++import view.InferencePatient;
++import view.ModifierPatient;
+ 
+ import java.io.File;
+ 
+ public class Main {
+     public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
+ 
+-
++        InferencePatient frame = new InferencePatient();
++        frame.setVisible(true);
++        AjouterPatient frame2 = new AjouterPatient();
++        frame2.setVisible(true);
+          /* java.awt.EventQueue.invokeLater(new Runnable() {
+             public void run() {
+                 //AjouterPatient frame = new AjouterPatient();
+Index: src/view/InferencePatient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/view/InferencePatient.java b/src/view/InferencePatient.java
+new file mode 100644
+--- /dev/null	(date 1654117196021)
++++ b/src/view/InferencePatient.java	(date 1654117196021)
+@@ -0,0 +1,317 @@
++/*
++ * To change this license header, choose License Headers in Project Properties.
++ * To change this template file, choose Tools | Templates
++ * and open the template in the editor.
++ */
++
++
++/**
++ *
++ * @author Winsido
++ */
++package view;
++
++/*
++ * To change this license header, choose License Headers in Project Properties.
++ * To change this template file, choose Tools | Templates
++ * and open the template in the editor.
++ */
++
++
++
++
++import java.awt.EventQueue;
++
++import javax.swing.JFrame;
++import javax.swing.JPanel;
++import java.awt.Color;
++import javax.swing.JTextField;
++import javax.swing.JLabel;
++import java.awt.Font;
++import javax.swing.JComboBox;
++import javax.swing.BorderFactory;
++import javax.swing.DefaultComboBoxModel;
++import javax.swing.ImageIcon;
++
++import javax.swing.JButton;
++
++public class InferencePatient extends JFrame {
++
++    private JFrame frame;
++    private JTextField nom;
++    private JTextField age;
++    private JComboBox sexe;
++    private JTextField chol;
++    private JTextField glu;
++    private JTextField tas;
++    private JTextField tad;
++    private JTextField taille;
++    private JTextField poids;
++
++    private JTextField imc;
++    private JTextField tt;
++    private JTextField th;
++    private JButton ajouter,accueil;
++
++
++    public InferencePatient() {
++
++        setBounds(100, 100, 894, 462);
++        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++        getContentPane().setLayout(null);
++        this.setResizable(false);
++
++        this.setLocation(500, 300);
++        JPanel paneln = new JPanel();
++        paneln.setBackground(Color.WHITE);
++        paneln.setBounds(0, 0, 900, 425);
++        getContentPane().add(paneln);
++        paneln.setLayout(null);
++
++        JLabel label_nom = new JLabel("Nom :");
++        label_nom.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_nom.setBounds(31, 74, 98, 43);
++        paneln.add(label_nom);
++
++        JLabel label_age = new JLabel("Age :");
++        label_age.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_age.setBounds(31, 144, 98, 43);
++        paneln.add(label_age);
++
++        JLabel label_sexe = new JLabel("Sexe : ");
++        label_sexe.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_sexe.setBounds(31, 209, 98, 43);
++        paneln.add(label_sexe);
++
++        JLabel label_chol = new JLabel("CHOL :");
++        label_chol.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_chol.setBounds(31, 272, 98, 43);
++        paneln.add(label_chol);
++
++        JLabel label_glu = new JLabel("GLU : ");
++        label_glu.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_glu.setBounds(31, 336, 98, 43);
++        paneln.add(label_glu);
++
++        JLabel label_tas = new JLabel("TAS :");
++        label_tas.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_tas.setBounds(317, 74, 98, 43);
++        paneln.add(label_tas);
++
++        JLabel label_tad = new JLabel("TAD : ");
++        label_tad.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_tad.setBounds(317, 144, 98, 43);
++        paneln.add(label_tad);
++
++        JLabel label_taille = new JLabel("Taille :");
++        label_taille.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_taille.setBounds(317, 209, 98, 43);
++        paneln.add(label_taille);
++
++        JLabel label_poids = new JLabel("Poids :");
++        label_poids.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_poids.setBounds(317, 272, 98, 43);
++        paneln.add(label_poids);
++
++        JLabel label_imc = new JLabel("IMC :");
++        label_imc.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_imc.setBounds(317, 336, 98, 43);
++        paneln.add(label_imc);
++
++        JLabel label_tt = new JLabel("TT :");
++        label_tt.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_tt.setBounds(594, 74, 98, 43);
++        paneln.add(label_tt);
++
++        JLabel label_th = new JLabel("TH : ");
++        label_th.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
++        label_th.setBounds(594, 144, 98, 43);
++        paneln.add(label_th);
++
++        nom = new JTextField();
++        nom.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        nom.setBounds(103, 83, 164, 29);
++        paneln.add(nom);
++        nom.setColumns(10);
++
++        age = new JTextField();
++        age.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        age.setColumns(10);
++        age.setBounds(103, 152, 164, 29);
++        paneln.add(age);
++
++        sexe = new JComboBox();
++        sexe.setModel(new DefaultComboBoxModel(new String[] {"Homme", "Femme"}));
++        sexe.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        sexe.setBounds(103, 217, 164, 29);
++        paneln.add(sexe);
++
++        chol = new JTextField();
++        chol.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        chol.setColumns(10);
++        chol.setBounds(103, 280, 164, 29);
++        paneln.add(chol);
++
++        glu = new JTextField();
++        glu.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        glu.setColumns(10);
++        glu.setBounds(103, 344, 164, 29);
++        paneln.add(glu);
++
++        tas = new JTextField();
++        tas.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        tas.setColumns(10);
++        tas.setBounds(381, 83, 164, 29);
++        paneln.add(tas);
++
++        tad = new JTextField();
++        tad.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        tad.setColumns(10);
++        tad.setBounds(381, 152, 164, 29);
++        paneln.add(tad);
++
++        taille = new JTextField();
++        taille.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        taille.setColumns(10);
++        taille.setBounds(381, 217, 164, 29);
++        paneln.add(taille);
++
++        poids = new JTextField();
++        poids.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        poids.setColumns(10);
++        poids.setBounds(381, 280, 164, 29);
++        paneln.add(poids);
++
++        imc = new JTextField();
++        imc.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        imc.setColumns(10);
++        imc.setBounds(381, 344, 164, 29);
++        paneln.add(imc);
++
++        tt = new JTextField();
++        tt.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        tt.setColumns(10);
++        tt.setBounds(667, 83, 164, 29);
++        paneln.add(tt);
++
++        th = new JTextField();
++        th.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
++        th.setColumns(10);
++        th.setBounds(667, 152, 164, 29);
++        paneln.add(th);
++
++        JLabel lblNewLabel_1 = new JLabel("");
++        lblNewLabel_1.setIcon(new ImageIcon(AjouterPatient.class.getResource("/images/logoi.png")));
++        lblNewLabel_1.setBounds(-33, 0, 205, 64);
++        paneln.add(lblNewLabel_1);
++
++        JLabel titre = new JLabel("Diagnostiquer Patient ");
++        titre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
++        titre.setBounds(340, 10, 210, 30);
++        titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
++        paneln.add(titre);
++
++        ajouter = new JButton("Prédire");
++        ajouter.setBounds(667, 298, 164, 35);
++        paneln.add(ajouter);
++        accueil = new JButton("Accueil");
++        accueil.setBounds(667, 349, 164, 35);
++        paneln.add(accueil);
++        JLabel bgc = new JLabel("");
++        bgc.setIcon(new ImageIcon(InferencePatient.class.getResource("/images/background.jpg")));
++        bgc.setBounds(0, 62, 890, 366);
++        paneln.add(bgc);
++        this.setVisible(true);
++    }
++
++    public JFrame getFrame() {return frame;}
++    public void setFrame(JFrame frame) {this.frame = frame;}
++    //Getters & Setters des facteurs
++    public JTextField getNom() {return nom;}
++    public void setNom(JTextField nom) {this.nom = nom;}
++
++    public JTextField getAge() {return age;}
++    public void setAge(JTextField age) {this.age = age;}
++
++    public JTextField getChol() {return chol;}
++    public void setChol(JTextField chol) {this.chol = chol;}
++
++    public JComboBox getSexe() {
++        return sexe;
++    }
++    public void setSexe(JComboBox sexe) {
++        this.sexe = sexe;
++    }
++
++    public JTextField getGlu() {
++        return glu;
++    }
++    public void setGlu(JTextField glu) {this.glu = glu;}
++
++    public JTextField getTas() {
++        return tas;
++    }
++    public void setTas(JTextField tas) {this.tas = tas;}
++
++    public JTextField getTad() {
++        return tad;
++    }
++    public void setTad(JTextField tad) {
++        this.tad = tad;
++    }
++
++    public JTextField getTaille() {
++        return taille;
++    }
++    public void setTaille(JTextField taille) {
++        this.taille = taille;
++    }
++
++    public JTextField getPoids() {
++        return poids;
++    }
++    public void setPoids(JTextField poids) {
++        this.poids = poids;
++    }
++
++    public JTextField getImc() {
++        return imc;
++    }
++    public void setImc(JTextField imc) {
++        this.imc = imc;
++    }
++
++    public JTextField getTt() {return tt;}
++    public void setTt(JTextField tt) {
++        this.tt = tt;
++    }
++
++    public JTextField getTh() {
++        return th;
++    }
++    public void setTh(JTextField th) {
++        this.th = th;
++    }
++
++
++
++    public JButton getAjouter() {
++        return ajouter;
++    }
++
++    public void setAjouter(JButton ajouter) {
++        this.ajouter = ajouter;
++    }
++
++    public JButton getAccueil() {
++        return accueil;
++    }
++
++    public void setAccueil(JButton accueil) {
++        this.accueil = accueil;
++    }
++
++
++
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf\" name=\"Changes\" comment=\"commit1\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/controller/AcceuilPageController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/controller/AjouterPatientController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/controller/AjouterPatientController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/view/AcceuilPage.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/view/AcceuilPage.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"294byTh4DOsouDQFrJAXAdhk6G5\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;278&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;15&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/IdeaProjects/PFE_Master/src/ontologie&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\ontologie\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"AjouterPatient\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"view.AjouterPatient\" />\r\n      <module name=\"PFE_Master\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"view.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"DataSetchargement\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"DataSetchargement\" />\r\n      <module name=\"PFE_Master\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"InferenceFloue\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"réseauxBayésiens.InferenceFloue\" />\r\n      <module name=\"PFE_Master\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;D:\\smile.dll&quot;\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"réseauxBayésiens.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"PFE_Master\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Patient\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"model.Patient\" />\r\n      <module name=\"PFE_Master\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.DataSetchargement\" />\r\n      <item itemvalue=\"Application.Patient\" />\r\n      <item itemvalue=\"Application.AjouterPatient\" />\r\n      <item itemvalue=\"Application.InferenceFloue\" />\r\n      <item itemvalue=\"Application.Main\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.DataSetchargement\" />\r\n        <item itemvalue=\"Application.Patient\" />\r\n        <item itemvalue=\"Application.InferenceFloue\" />\r\n        <item itemvalue=\"Application.AjouterPatient\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf\" name=\"Changes\" comment=\"\" />\r\n      <created>1652375560228</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1652375560228</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"commit1\">\r\n      <created>1653314344400</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1653314344400</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"commit1\">\r\n      <created>1653659009556</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1653659009556</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"commit1\">\r\n      <created>1653912946685</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1653912946685</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"commit1\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"commit1\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4f7d999bd8c197ea86242602c562d67d165c91b1)
++++ b/.idea/workspace.xml	(date 1654117347414)
+@@ -2,10 +2,11 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit1">
+-      <change afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/view/InferencePatient.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/view/prediction.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/view/AcceuilPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AcceuilPage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ontologie/catalog-v001.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ontologie/catalog-v001.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,6 +22,10 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="jar://D:/JAVA/java15/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -184,6 +189,11 @@
+           <properties class="java.lang.NullPointerException" package="java.lang" />
+           <option name="timeStamp" value="1" />
+         </breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/Main.java</url>
++          <line>15</line>
++          <option name="timeStamp" value="4" />
++        </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+   </component>
+Index: src/view/prediction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/view/prediction.java b/src/view/prediction.java
+new file mode 100644
+--- /dev/null	(date 1654117217640)
++++ b/src/view/prediction.java	(date 1654117217640)
+@@ -0,0 +1,4 @@
++package view;
++
++public class prediction {
++}
+Index: src/ontologie/catalog-v001.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<catalog prefer=\"public\" xmlns=\"urn:oasis:names:tc:entity:xmlns:xml:catalog\">\r\n    <group id=\"Folder Repository, directory=, recursive=true, Auto-Update=true, version=2\" prefer=\"public\" xml:base=\"\">\r\n        <uri id=\"Automatically generated entry, Timestamp=1653912321817\" name=\"http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115\" uri=\"OntologieFinale.owl\"/>\r\n    </group>\r\n</catalog>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ontologie/catalog-v001.xml b/src/ontologie/catalog-v001.xml
+--- a/src/ontologie/catalog-v001.xml	(revision 4f7d999bd8c197ea86242602c562d67d165c91b1)
++++ b/src/ontologie/catalog-v001.xml	(date 1654117217660)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+-        <uri id="Automatically generated entry, Timestamp=1653912321817" name="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="OntologieFinale.owl"/>
++        <uri id="Automatically generated entry, Timestamp=1654072093647" name="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="OntologieFinale.owl"/>
+     </group>
+ </catalog>
