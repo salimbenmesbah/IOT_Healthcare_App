@@ -13,14 +13,13 @@ import java.util.LinkedList;
 
 public class AcceuilPageController {
      AcceuilPage acceuil;
-    private Patient patient;
     FuzzyOntology o;
     DefaultTableModel model = new DefaultTableModel();
     LinkedList<String> e ;
 
     //constructeur
-    public AcceuilPageController(AcceuilPage acceuil, Patient patient) throws Exception{
-        this.acceuil = acceuil; this.patient = patient;
+    public AcceuilPageController(AcceuilPage acceuil) throws Exception{
+        this.acceuil = acceuil;
         model.addColumn("Patient");
         model.addColumn("Age");
         model.addColumn("Sexe");
@@ -33,8 +32,10 @@ public class AcceuilPageController {
         model.addColumn("IMC");
         model.addColumn("TT");
         model.addColumn("TH");
-        model.addColumn("PROT");
         o= new FuzzyOntology("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\ontologie\\OntologieFinale.owl");
+    }
+    public void initControlleur(){
+
     }
 
     //ajouter controlleur

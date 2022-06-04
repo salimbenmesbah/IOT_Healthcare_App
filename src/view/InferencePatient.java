@@ -51,7 +51,7 @@ public class InferencePatient extends JFrame {
     private JTextField imc;
     private JTextField tt;
     private JTextField th;
-    private JButton ajouter,accueil;
+    private JButton inferer,accueil;
 
 
     public InferencePatient() {
@@ -207,9 +207,9 @@ public class InferencePatient extends JFrame {
         titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         paneln.add(titre);
 
-        ajouter = new JButton("Prédire");
-        ajouter.setBounds(667, 298, 164, 35);
-        paneln.add(ajouter);
+        inferer = new JButton("Prédire");
+        inferer.setBounds(667, 298, 164, 35);
+        paneln.add(inferer);
         accueil = new JButton("Accueil");
         accueil.setBounds(667, 349, 164, 35);
         paneln.add(accueil);
@@ -291,12 +291,12 @@ public class InferencePatient extends JFrame {
 
 
 
-    public JButton getAjouter() {
-        return ajouter;
+    public JButton getInferer() {
+        return inferer;
     }
 
-    public void setAjouter(JButton ajouter) {
-        this.ajouter = ajouter;
+    public void setInferer(JButton ajouter) {
+        this.inferer = ajouter;
     }
 
     public JButton getAccueil() {

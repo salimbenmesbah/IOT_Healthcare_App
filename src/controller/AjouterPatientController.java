@@ -1,6 +1,7 @@
 package controller;
 
 import model.Patient;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import view.AcceuilPage;
 import view.AjouterPatient;
@@ -14,14 +15,15 @@ import javax.swing.*;
 public class AjouterPatientController {
     private AjouterPatient ap;
     private Patient patient;
-    public AjouterPatientController(AjouterPatient ap , Patient patient){
-        this.ap=ap; this.patient= patient;
+    public AjouterPatientController(AjouterPatient ap) throws OWLOntologyCreationException {
+        this.ap=ap; this.patient= new Patient();
     }
     public void initControlleur() {
         //pour ajouter un patient
         ap.getAjouter().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                //Recuperer les infos des textfield
                 String nom_patient,age,sexe,cholesterol,glucose,tas,tad,taille,poids,imc,tt,th;
                 nom_patient=ap.getNom().getText().toString();
                 age=ap.getAge().getText().toString();
@@ -35,7 +37,7 @@ public class AjouterPatientController {
                 imc=ap.getImc().getText().toString();
                 tt=ap.getTt().getText().toString();
                 th=ap.getTh().getText().toString();
-
+                //Stocker ces infos dans un patient (celui qui est instancié lors du constructeur)
                 patient.setNom_patient(nom_patient);
                 patient.setAge(age);
                 patient.setSexe(sexe);
@@ -56,6 +58,12 @@ public class AjouterPatientController {
                 } catch (OWLOntologyStorageException ex) {
                     JOptionPane.showMessageDialog(null, "Revoyez vos attributs","Erreur",JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        ap.getAccueil().addMouseListener(new MouseAdapter() {  //Modifier les informations du patient dans l'ontologie lorsqu'on clique sur le bouton "Modifier",
+            //remplacer getAjouter()par getModifier()
+            public void mouseClicked(MouseEvent ev) {
+                ap.setVisible(false);
             }
         });
     }

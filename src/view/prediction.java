@@ -8,24 +8,23 @@ package view;
 import java.awt.EventQueue;
 import java.awt.Image;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Toolkit;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import java.awt.Font;
-import javax.swing.JButton;
 
 public class prediction extends JFrame{
 
+    private double[] resultatDuPAtient;
     JTextArea monaffichage;
-    JButton visiong,retour;
-    public prediction() {
+    JButton retour;
+    JScrollPane scrollText;
 
+
+
+    public prediction(double[] resultatDuPatient) {
+        this.resultatDuPAtient = resultatDuPatient;
+        //dessinViewPrediction;
         this.setBackground(Color.WHITE);
         this.setBounds(100, 100, 1010, 554);
         this.getContentPane().setLayout(null);
@@ -45,7 +44,21 @@ public class prediction extends JFrame{
         monaffichage = new JTextArea();
         monaffichage.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 14));
         monaffichage.setBounds(10, 135, 400, 171);
+        if (resultatDuPatient != null)
+        {
+            monaffichage.append("La probabilité que vous n'ayez pas le diabète est de\n"+resultatDuPatient[1]*100+"%\n");
+            monaffichage.append("La probabilité que vous ayez le diabète est de\n"+resultatDuPatient[0]*100+"%\n");
+        }
+        if (resultatDuPatient[1]>resultatDuPatient[0]){
+            monaffichage.append("Donc vous avez plus de chance de ne pas être atteint du diabète\n");
+        }
+        else {
+            monaffichage.append("Donc vous avez plus de chance d'être diabètique\n");
+        }
+//        JScrollPane scrollText = new JScrollPane(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//        scrollText.add(monaffichage);
         panel.add(monaffichage);
+//        panel.add(scrollText);
 
 
         JLabel titre = new JLabel("Résultat");
@@ -59,11 +72,10 @@ public class prediction extends JFrame{
         retour.setBounds(55, 437, 133, 44);
         panel.add(retour);
 
-
-
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
+
 
     public JTextArea getMonaffichage() {
         return monaffichage;
@@ -71,14 +83,6 @@ public class prediction extends JFrame{
 
     public void setMonaffichage(JTextArea monaffichage) {
         this.monaffichage = monaffichage;
-    }
-
-    public JButton getVisiong() {
-        return visiong;
-    }
-
-    public void setVisiong(JButton visiong) {
-        this.visiong = visiong;
     }
 
     public JButton getRetour() {
@@ -89,6 +93,11 @@ public class prediction extends JFrame{
         this.retour = retour;
     }
 
-
+    public double[] getResultatDuPAtient() {
+        return resultatDuPAtient;
+    }
+    public void setResultatDuPAtient(double[] resultatDuPAtient) {
+        this.resultatDuPAtient = resultatDuPAtient;
+    }
 
 }

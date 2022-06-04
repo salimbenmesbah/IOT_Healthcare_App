@@ -21,7 +21,7 @@ public class Main {
 //        frame3.setVisible(true);
 //        ModifierPatient frame4 = new ModifierPatient();
 //        frame4.setVisible(true);
-          prediction frame5 = new prediction();
+          prediction frame5 = new prediction(new double[]{0.00, 1.00});
           frame5.setVisible(true);
          /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
