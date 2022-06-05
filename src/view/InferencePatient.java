@@ -57,7 +57,7 @@ public class InferencePatient extends JFrame {
     public InferencePatient() {
 
         setBounds(100, 100, 894, 462);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         getContentPane().setLayout(null);
         this.setResizable(false);
 
@@ -131,6 +131,7 @@ public class InferencePatient extends JFrame {
         nom = new JTextField();
         nom.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         nom.setBounds(103, 83, 164, 29);
+        nom.setEditable(false);
         paneln.add(nom);
         nom.setColumns(10);
 
@@ -138,66 +139,77 @@ public class InferencePatient extends JFrame {
         age.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         age.setColumns(10);
         age.setBounds(103, 152, 164, 29);
+        age.setEditable(false);
         paneln.add(age);
 
         sexe = new JComboBox();
         sexe.setModel(new DefaultComboBoxModel(new String[] {"Homme", "Femme"}));
         sexe.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         sexe.setBounds(103, 217, 164, 29);
+        sexe.setEnabled(false);
         paneln.add(sexe);
 
         chol = new JTextField();
         chol.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         chol.setColumns(10);
         chol.setBounds(103, 280, 164, 29);
+        chol.setEditable(false);
         paneln.add(chol);
 
         glu = new JTextField();
         glu.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         glu.setColumns(10);
         glu.setBounds(103, 344, 164, 29);
+        glu.setEditable(false);
         paneln.add(glu);
 
         tas = new JTextField();
         tas.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         tas.setColumns(10);
         tas.setBounds(381, 83, 164, 29);
+        tas.setEditable(false);
         paneln.add(tas);
 
         tad = new JTextField();
         tad.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         tad.setColumns(10);
         tad.setBounds(381, 152, 164, 29);
+        tad.setEditable(false);
         paneln.add(tad);
 
         taille = new JTextField();
         taille.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         taille.setColumns(10);
         taille.setBounds(381, 217, 164, 29);
+        taille.setEditable(false);
         paneln.add(taille);
 
         poids = new JTextField();
         poids.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         poids.setColumns(10);
         poids.setBounds(381, 280, 164, 29);
+        poids.setEditable(false);
         paneln.add(poids);
 
         imc = new JTextField();
         imc.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         imc.setColumns(10);
         imc.setBounds(381, 344, 164, 29);
+        imc.setEditable(false);
         paneln.add(imc);
 
         tt = new JTextField();
         tt.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         tt.setColumns(10);
         tt.setBounds(667, 83, 164, 29);
+        tt.setEditable(false);
         paneln.add(tt);
 
         th = new JTextField();
         th.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         th.setColumns(10);
         th.setBounds(667, 152, 164, 29);
+        th.setEditable(false);
         paneln.add(th);
 
 

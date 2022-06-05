@@ -22,19 +22,15 @@ public class Patient {
     FuzzyOntology o;
 
     //constructor 1
-    public Patient(String nom_patient, String age, String sexe, String chol, String glu, String tas, String tad, String taille, String poids, String imc, String tt, String th) throws OWLOntologyCreationException, OWLOntologyStorageException {
+    public Patient(String nom_patient, String age, String sexe, String chol, String glu, String tas, String tad, String taille, String poids, String imc, String tt, String th)  {
         this.nom_patient = nom_patient; this.age= age; this.sexe=sexe; this.chol=chol; this.glu=glu; this.tas=tas; this.tad=tad; this.taille=taille; this.poids=poids; this.imc=imc;
         this.tt=tt; this.th=th;
         //
-
-        o= new FuzzyOntology("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\ontologie\\OntologieFinale.owl");
-
     }
 
     //constructor 2
-    public Patient() throws OWLOntologyCreationException {
-        String chemin = "C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\ontologie\\OntologieFinale.owl";
-        o= new FuzzyOntology(chemin);
+    public Patient()  {
+
     }
 
     //remplir les attributs
@@ -57,9 +53,11 @@ public class Patient {
     }
 
     //ajouter à l'ontologie
-    public void AddToOntology() throws OWLOntologyStorageException {
+    public void AddToOntology() throws OWLOntologyStorageException, OWLOntologyCreationException {
 
         RemplirAttributs();
+        String chemin = "C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\ontologie\\OntologieFinale.owl";
+        o= new FuzzyOntology(chemin);
 
         //ajouter des individus aux classes     demander sexe a kamel
         o.addIndividual(nom_patient, "patient");
@@ -280,7 +278,8 @@ public class Patient {
                 maxVal = resultat[i];
             }
         }
-
+        //resultat[0] représente l'état YES du noeud diagnostic
+        //resultat[1] représente l'état NO du noeud diagnostic
 
         if (maxVal == resultat[0]) { k= "Ce patient est atteint du diabète"; o.addDataProperty(nom_patient,"Diagnostic_Final","true");}
         if (maxVal == resultat[1]) { k= "Ce patient n'est pas atteint du diabète"; o.addDataProperty(nom_patient,"Diagnostic_Final","false");}

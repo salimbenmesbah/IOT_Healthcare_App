@@ -9,6 +9,7 @@ import view.ModifierPatient;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,14 +25,16 @@ public class ModifierPatientController {
     }
 
     public void initControlleur() {
-        int i = 0;//chargement des données du patient dans les textfield//////////////////////////
+        //chargement des données du patient dans les textfield//////////////////////////
         modifier_infos.getNom().setText(patient.getNom_patient());
         modifier_infos.getAge().setText(patient.getAge());
-        modifier_infos.getSexe().getSelectedItem();
-        if (patient.getSexe().equals("FEMALE")) {
-            i = 1;
+        if (Objects.equals(patient.getSexe(), "MALE")) {
+            modifier_infos.getSexe().setSelectedIndex(0);
         }
-        modifier_infos.getSexe().setSelectedIndex(i);
+        if (Objects.equals(patient.getSexe(), "FEMALE")) {
+            modifier_infos.getSexe().setSelectedIndex(1);
+        }
+        modifier_infos.getSexe().setSelectedIndex(1);
         modifier_infos.getChol().setText(patient.getChol());
         modifier_infos.getGlu().setText(patient.getGlu());
         modifier_infos.getTas().setText(patient.getTas());
@@ -75,7 +78,7 @@ public class ModifierPatientController {
                 patient.setTh(th);
 
                 try {//chargement de l'ontologie
-                    NotreOntologie = new FuzzyOntology("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\ontologie\\OntologieFinale.owl");
+                    NotreOntologie = new FuzzyOntology("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\ontologie\\OntologieFinale.owl");
                 } catch (OWLOntologyCreationException ex) {
                     Logger.getLogger(ModifierPatientController.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -87,9 +90,10 @@ public class ModifierPatientController {
                 }
                 try { // rajouter le nouveau patient
                     patient.AddToOntology();
-                } catch (OWLOntologyStorageException e) {
+                } catch (OWLOntologyStorageException | OWLOntologyCreationException e) {
                     Logger.getLogger(ModifierPatientController.class.getName()).log(Level.SEVERE, null, e);
                 }// notifier que la patient a bien été modifié
+
                 JOptionPane.showMessageDialog(null, "Patient Modifier ", "Information", JOptionPane.INFORMATION_MESSAGE);
 
 

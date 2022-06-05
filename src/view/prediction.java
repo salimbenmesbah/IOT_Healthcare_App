@@ -55,7 +55,7 @@ public class prediction extends JFrame{
         else {
             monaffichage.append("Donc vous avez plus de chance d'être diabètique\n");
         }
-//        JScrollPane scrollText = new JScrollPane(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//        JScrollPane scrollText = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 //        scrollText.add(monaffichage);
         panel.add(monaffichage);
 //        panel.add(scrollText);

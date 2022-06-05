@@ -32,7 +32,7 @@ public class ModifierPatient extends JFrame{
     public ModifierPatient() {
 
         setBounds(100, 100, 894, 462);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         getContentPane().setLayout(null);
         this.setResizable(false);
 

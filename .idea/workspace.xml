@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit1">
-      <change afterPath="$PROJECT_DIR$/src/controller/InferencePatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/predictionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/InferencePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/InferencePatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FuzzyOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FuzzyOntology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/réseauxBayésiens/InferenceFloue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/réseauxBayésiens/InferenceFloue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AcceuilPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AcceuilPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AjouterPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AjouterPatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/InferencePatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/InferencePatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ModifierPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ModifierPatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/prediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/prediction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +55,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;278&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;15&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC-Service/IdeaProjects/IOT_Healthcare_App/src/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC-Service/IdeaProjects/IOT_Healthcare_App/lib&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -59,6 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC-Service\IdeaProjects\IOT_Healthcare_App\lib" />
       <recent name="C:\Users\PC-Service\IdeaProjects\IOT_Healthcare_App\src\images" />
       <recent name="C:\Users\USER\IdeaProjects\PFE_Master\src\ontologie" />
     </key>
@@ -234,6 +240,14 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

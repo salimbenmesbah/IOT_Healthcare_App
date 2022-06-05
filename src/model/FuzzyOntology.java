@@ -29,8 +29,10 @@ import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.util.OWLEntityRemover;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class FuzzyOntology {
     File file;
@@ -50,6 +52,11 @@ public class FuzzyOntology {
     private OWLReasonerFactory reasonerFactory;
     private OWLDataFactory df = OWLManager.getOWLDataFactory();
     OWLOntologyManager manager;
+    //listes de stockage pour la Jtable de la page accueil
+    public ArrayList<String> patient = new ArrayList<String>(), age = new ArrayList<String>(), gender = new ArrayList<String>(), cholesterol = new ArrayList<String>(),
+            glucose = new ArrayList<String>(), systolic_bp = new ArrayList<String>(), diastolic_bp = new ArrayList<String>(),
+            height = new ArrayList<String>(), weight = new ArrayList<String>(), bmi = new ArrayList<String>(),
+            waist = new ArrayList<String>(), hip = new ArrayList<String>(), Diagnostic_Final = new ArrayList<String>();
 
     //constructeur
     public FuzzyOntology(String link) throws OWLOntologyCreationException {
@@ -236,4 +243,324 @@ public class FuzzyOntology {
             }
         }
     }
+
+    public ArrayList<String> getIndividulsByClass(String nameClass) throws Exception {
+        ArrayList<String> ip=new ArrayList<String>();
+
+        manager = OWLManager.createOWLOntologyManager();
+        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
+        OWLDataProperty dp;
+
+        OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
+        for (OWLClass cls : ontology.getClassesInSignature()) {   //pour chaque classe de l'ontologie
+            if (cls.getIRI().getFragment().equals(nameClass)) {         //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false); // recuperer les individus de la classe patient
+                System.out.println("Number of instances of the class \"" + nameClass + "\" is  " + instances.getFlattened().size());
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+
+                    ip.add(ind.getIRI().getFragment());
+
+                    System.out.println(" Individual " + ind.getIRI().getFragment());
+                    //ajouter patient
+                    patient.add(ind.getIRI().getFragment());                   //ajouter l'instance patient à l'array list
+                    dp = null;
+                    // récupérer la dataproperty "Diagnostic_Final" pour le patient courant
+                    for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()){ //pour chaque dataproperty
+                        if (ont.getIRI().getFragment().equals("Diagnostic_Final") ){              //selectionner le dataproperty Diagnostic_Final
+                            dp = ont  ;
+                            Set<OWLLiteral>  values = reasoner.getDataPropertyValues(ind, dp);       //trouver les valeurs de Diagnostic_Final du patient
+                            if (values == null) {Diagnostic_Final.add(null); }
+                            for(OWLLiteral ol: values){ System.out.print(" \t: Diagnostic_Final = " + ol.getLiteral());
+                                //ajouter leur Age
+                                Diagnostic_Final.add(ol.getLiteral());                                                   //ajouter ces valeurs à l'arraylist Diagnostic_Final
+                            }
+                        }
+                    }
+                    /////////////////////////////////////////////////////////
+                    //recuperer les instances de chaque autre classe liées avec l'instance patient en question
+                    //ensuite parcourir leurs dataproperty
+                    //AGE
+                    OWLObjectProperty op = null;
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {    //pour chaque objectproperty
+                        if (opp.getIRI().getFragment().equals("Has_age")) {                   // selectionner le objectproperty hasage
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesAge = reasoner.getObjectPropertyValues(ind, op).getFlattened(); //trouver les instances age reliées avec l'individu patient
+                    for (OWLNamedIndividual indage : valuesAge) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_Age")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesage = reasoner.getDataPropertyValues(indage, dp);// trouver les valeur des dataproperty has_AGE du patient
+
+                                for (OWLLiteral ol : valuesage) {
+                                    System.out.print(" \t: Has_Age = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    age.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Gender
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_gender")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesGender = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indgender : valuesGender) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("gender")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesgender = reasoner.getDataPropertyValues(indgender, dp);
+
+                                for (OWLLiteral ol : valuesgender) {
+                                    System.out.print(" \t: gender = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    gender.add(ol.getLiteral());
+                                }
+                            }
+                        }
+
+
+                    }
+                    ////////////////////////////////////////////////////////
+                    //cholesterol
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_cholesterol")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesCholesterol = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indcholesterol : valuesCholesterol) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_Cholesterol")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuescholesterol = reasoner.getDataPropertyValues(indcholesterol, dp);
+
+                                for (OWLLiteral ol : valuescholesterol) {
+                                    System.out.print(" \t: Has_Cholesterol = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    cholesterol.add(ol.getLiteral());
+                                }
+                            }
+                        }
+
+
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Glucose
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_glucose")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesGlucose = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indglucose : valuesGlucose) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_Glucose")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesglucose = reasoner.getDataPropertyValues(indglucose, dp);
+
+                                for (OWLLiteral ol : valuesglucose) {
+                                    System.out.print(" \t: Has_Glucose = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    glucose.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Systolic_bp
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_SBP")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesSBP = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indSBP : valuesSBP) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_SBP_rate")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuessbp = reasoner.getDataPropertyValues(indSBP, dp);
+
+                                for (OWLLiteral ol : valuessbp) {
+                                    System.out.print(" \t: Has_SBP_rate = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    systolic_bp.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Diastolic_bp
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_DBP")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesDBP = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indDBP : valuesDBP) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_DBP_rate")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesdbp = reasoner.getDataPropertyValues(indDBP, dp);
+
+                                for (OWLLiteral ol : valuesdbp) {
+                                    System.out.print(" \t: Has_DBP_rate = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    diastolic_bp.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Height
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_Height")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesHeight = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indHeight : valuesHeight) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_height")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesheight = reasoner.getDataPropertyValues(indHeight, dp);
+
+                                for (OWLLiteral ol : valuesheight) {
+                                    System.out.print(" \t: Has_height = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    height.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //Weight
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_Weight")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesWeight = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indWeight : valuesWeight) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_weight")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesweight = reasoner.getDataPropertyValues(indWeight, dp);
+
+                                for (OWLLiteral ol : valuesweight) {
+                                    System.out.print(" \t: Has_weight = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    weight.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //bmi
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_bmi")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesBMI = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indBMI : valuesBMI) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_BMI")) {
+                                dp = ont;
+                                Set<OWLLiteral> valuesbmi = reasoner.getDataPropertyValues(indBMI, dp);
+
+                                for (OWLLiteral ol : valuesbmi) {
+                                    System.out.print(" \t: Has_BMI = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    bmi.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //waist
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_Waist")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesWaist = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indWaist : valuesWaist) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_waist")) {
+                                dp = ont;
+                                Set<OWLLiteral> valueswaist = reasoner.getDataPropertyValues(indWaist, dp);
+
+                                for (OWLLiteral ol : valueswaist) {
+                                    System.out.print(" \t: Has_waist = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    waist.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                    ////////////////////////////////////////////////////////
+                    //hip
+                    for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {
+                        if (opp.getIRI().getFragment().equals("Has_Hip")) {
+
+                            op = opp;
+                        }
+                    }
+
+
+                    Set<OWLNamedIndividual> valuesHip = reasoner.getObjectPropertyValues(ind, op).getFlattened();
+                    for (OWLNamedIndividual indHip : valuesHip) {
+                        for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) {
+                            if (ont.getIRI().getFragment().equals("Has_hip")) {
+                                dp = ont;
+                                Set<OWLLiteral> valueship = reasoner.getDataPropertyValues(indHip, dp);
+
+                                for (OWLLiteral ol : valueship) {
+                                    System.out.println(" \t: Has_hip = " + ol.getLiteral());
+                                    //ajouter leur alt
+                                    hip.add(ol.getLiteral());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    return ip;}
 }

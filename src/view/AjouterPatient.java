@@ -43,7 +43,7 @@ public class AjouterPatient extends JFrame {
     public AjouterPatient() {
 
         setBounds(100, 100, 894, 462);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         getContentPane().setLayout(null);
         this.setResizable(false);
 

@@ -2,6 +2,7 @@ package controller;
 
 import model.Patient;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import smile.License;
 import smile.Network;
 import view.InferencePatient;
 import view.prediction;
@@ -13,32 +14,34 @@ public class InferencePatientController {
     private InferencePatient inferencePatient;
     private Patient patient;
     Network net;
+    public static License Notrelicense = new smile.License(
+            "SMILE LICENSE d41161b6 8b72612c ed417b5a " +
+                    "THIS IS AN ACADEMIC LICENSE AND CAN BE USED " +
+                    "SOLELY FOR ACADEMIC RESEARCH AND TEACHING, " +
+                    "AS DEFINED IN THE BAYESFUSION ACADEMIC " +
+                    "SOFTWARE LICENSING AGREEMENT. " +
+                    "Serial #: en05exaj9ztpxsp2znslb6es6 " +
+                    "Issued for: ta meree (laughoutloudly417@gmail.com) " +
+                    "Academic institution: Saad dahleb Blida1 " +
+                    "Valid until: 2022-11-24 " +
+                    "Issued by BayesFusion activation server",
+            new byte[]
+                    {
+                            -116,120,-3,100,57,-127,27,-41,10,19,4,-86,-88,-126,-15,86,
+                            -47,59,-93,-127,-3,-101,-56,-63,-100,75,11,-32,86,107,-91,53,
+                            -30,82,42,-14,-34,-118,-103,-79,22,-128,-51,1,96,53,119,38,
+                            80,54,58,-1,107,-47,-26,42,49,64,100,38,-115,-121,111,27
+                    }
+    );
     public InferencePatientController(InferencePatient inferencePatient,Patient patient){
         this.inferencePatient=inferencePatient;
         this.patient=patient;
-        new smile.License(
-                "SMILE LICENSE d41161b6 8b72612c ed417b5a " +
-                        "THIS IS AN ACADEMIC LICENSE AND CAN BE USED " +
-                        "SOLELY FOR ACADEMIC RESEARCH AND TEACHING, " +
-                        "AS DEFINED IN THE BAYESFUSION ACADEMIC " +
-                        "SOFTWARE LICENSING AGREEMENT. " +
-                        "Serial #: en05exaj9ztpxsp2znslb6es6 " +
-                        "Issued for: ta meree (laughoutloudly417@gmail.com) " +
-                        "Academic institution: Saad dahleb Blida1 " +
-                        "Valid until: 2022-11-24 " +
-                        "Issued by BayesFusion activation server",
-                new byte[]
-                        {
-                                -116,120,-3,100,57,-127,27,-41,10,19,4,-86,-88,-126,-15,86,
-                                -47,59,-93,-127,-3,-101,-56,-63,-100,75,11,-32,86,107,-91,53,
-                                -30,82,42,-14,-34,-118,-103,-79,22,-128,-51,1,96,53,119,38,
-                                80,54,58,-1,107,-47,-26,42,49,64,100,38,-115,-121,111,27
-                        }
-        );
-        System.loadLibrary("jsmile");
-        Network net = new Network();
-        // load the network created by Tutorial1
-        net.readFile("C:\\Users\\USER\\IdeaProjects\\PFE_Master\\src\\réseauxBayésiens\\RéseauBayesienClassique2.xdsl");
+
+
+            System.loadLibrary("jsmile");
+            Network net = new Network();
+            // load the network created by Tutorial1
+            net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\RéseauBayesienClassique2.xdsl");
 
     }
     public void initController(){

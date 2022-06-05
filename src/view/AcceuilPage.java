@@ -7,7 +7,7 @@ public class AcceuilPage extends JFrame{
     private JTextField recherche;
     private JTable table;
 
-    public JButton ajouter,modifier,inference,search,afficher,chercher1;
+    public JButton ajouter,modifier,inference,supprimer,actualiser,chercher;
 
     public AcceuilPage(){
         this.setResizable(false);
@@ -44,10 +44,11 @@ public class AcceuilPage extends JFrame{
         String [] ent = {"Produit","Prix"};
         Object [][] data  = {{"PCqs1","30"},{"PCas","30"},{"PQSQC","30"},{"ADPQSQC","30"},{"SDPQSQC","30"},{"QSDPQSQC","30"},{"VCPQSQC","30"}};
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(37, 226, 814, 200);
+        scrollPane.setBounds(20, 226, 814, 200);
         panel.add(scrollPane);
 
         table = new JTable();
+
 
         scrollPane.setViewportView(table);
         //	DefaultTableModel model = new DefaultTableModel();
@@ -68,29 +69,29 @@ public class AcceuilPage extends JFrame{
         ajouter.setBounds(421, 94, 100, 40);
         panel.add(ajouter);
 
-        search = new JButton("Supprimer");
-        search.setBounds(648, 94, 100, 40);
-        panel.add(search);
+        supprimer = new JButton("Supprimer");
+        supprimer.setBounds(648, 94, 100, 40);
+        panel.add(supprimer);
 
         this.setVisible(true);
-        afficher = new JButton("Afficher");
-        afficher.setBounds(311, 94, 100, 40);
-        panel.add(afficher);
+        actualiser = new JButton("Actualiser");
+        actualiser.setBounds(311, 94, 100, 40);
+        panel.add(actualiser);
 
-        chercher1 = new JButton("Chercher");
-        chercher1.setBounds(201, 94, 100, 40);
-        panel.add(chercher1);
+        chercher = new JButton("Chercher");
+        chercher.setBounds(201, 94, 100, 40);
+        panel.add(chercher);
 
         panel.add(bgc);
         this.setVisible(true);
     }
 
-    public JButton getAfficher() {
-        return afficher;
+    public JButton getActualiser() {
+        return actualiser;
     }
 
-    public void setAfficher(JButton afficher) {
-        this.afficher = afficher;
+    public void setActualiser(JButton actualiser) {
+        this.actualiser = actualiser;
     }
 
 
@@ -98,12 +99,12 @@ public class AcceuilPage extends JFrame{
         return frame;
     }
 
-    public JButton getSearch() {
-        return search;
+    public JButton getSupprimer() {
+        return supprimer;
     }
 
-    public void setSearch(JButton search) {
-        this.search = search;
+    public void setSupprimer(JButton search) {
+        this.supprimer = search;
     }
 
 
@@ -151,12 +152,12 @@ public class AcceuilPage extends JFrame{
         this.inference = inference;
     }
 
-    public JButton getChercher1() {
-        return chercher1;
+    public JButton getChercher() {
+        return chercher;
     }
 
-    public void setChercher1(JButton chercher1) {
-        this.chercher1 = chercher1;
+    public void setChercher1(JButton chercher) {
+        this.chercher = chercher;
     }
 
 }

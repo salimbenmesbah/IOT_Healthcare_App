@@ -15,7 +15,7 @@ import javax.swing.*;
 public class AjouterPatientController {
     private AjouterPatient ap;
     private Patient patient;
-    public AjouterPatientController(AjouterPatient ap) throws OWLOntologyCreationException {
+    public AjouterPatientController(AjouterPatient ap) {
         this.ap=ap; this.patient= new Patient();
     }
     public void initControlleur() {
@@ -57,6 +57,8 @@ public class AjouterPatientController {
 
                 } catch (OWLOntologyStorageException ex) {
                     JOptionPane.showMessageDialog(null, "Revoyez vos attributs","Erreur",JOptionPane.ERROR_MESSAGE);
+                } catch (OWLOntologyCreationException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });
