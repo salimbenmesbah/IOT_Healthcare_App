@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit1">
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit10">
+      <change afterPath="$PROJECT_DIR$/src/ValidationKFold.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/InferencePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/InferencePatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/FuzzyOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FuzzyOntology.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/réseauxBayésiens/InferenceFloue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/réseauxBayésiens/InferenceFloue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AcceuilPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AcceuilPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AjouterPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AjouterPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/InferencePatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/InferencePatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ModifierPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ModifierPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/prediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/prediction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654194898844</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit10">
+      <created>1654445977025</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654445977025</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +229,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
+    <MESSAGE value="commit10" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

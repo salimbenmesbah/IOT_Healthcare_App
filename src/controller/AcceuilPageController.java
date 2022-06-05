@@ -98,6 +98,7 @@ public class AcceuilPageController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 FuzzyOntology ontologiecharge;
+
                 try {
                     ontologiecharge = new FuzzyOntology("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\ontologie\\OntologieFinale.owl");
                 } catch (OWLOntologyCreationException ex) {
@@ -123,6 +124,7 @@ public class AcceuilPageController {
         });
         acceuil.getChercher().addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
+                model.setRowCount(0);
                 String texte_a_rechercher = acceuil.getRecherche().getText();
                 FuzzyOntology ontologiecharge;
                 try {
@@ -135,23 +137,7 @@ public class AcceuilPageController {
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
-                int i = 0;
-                while (i < ontologiecharge.patient.size()) {
-                    if (ontologiecharge.patient.get(i).contains(texte_a_rechercher))
-                    {
-                        System.out.println(ontologiecharge.patient.get(i).contains(texte_a_rechercher));
-                        model.addRow(new Object[]{ontologiecharge.patient.get(i), ontologiecharge.age.get(i), ontologiecharge.gender.get(i), ontologiecharge.cholesterol.get(i),
-                            ontologiecharge.glucose.get(i), ontologiecharge.systolic_bp.get(i), ontologiecharge.diastolic_bp.get(i),
-                            (int) Math.round(Float.parseFloat(ontologiecharge.height.get(i)) * 2.54), (int) Math.round(Float.parseFloat(ontologiecharge.weight.get(i)) * 0.45),
-                            ontologiecharge.bmi.get(i), ontologiecharge.waist.get(i), ontologiecharge.hip.get(i), ontologiecharge.Diagnostic_Final.get(i)});
-                    }
-                    else
-                    {
-                        System.out.println("false");i++;
-                    }
-                    i++;
-                }
-                acceuil.getTable().setModel(model);
+
             }
         });
     }

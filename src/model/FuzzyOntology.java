@@ -52,11 +52,16 @@ public class FuzzyOntology {
     private OWLReasonerFactory reasonerFactory;
     private OWLDataFactory df = OWLManager.getOWLDataFactory();
     OWLOntologyManager manager;
-    //listes de stockage pour la Jtable de la page accueil
+    //listes de stockage pour la Jtable de la page accueil lors du bouton "Actualiser"
     public ArrayList<String> patient = new ArrayList<String>(), age = new ArrayList<String>(), gender = new ArrayList<String>(), cholesterol = new ArrayList<String>(),
             glucose = new ArrayList<String>(), systolic_bp = new ArrayList<String>(), diastolic_bp = new ArrayList<String>(),
             height = new ArrayList<String>(), weight = new ArrayList<String>(), bmi = new ArrayList<String>(),
             waist = new ArrayList<String>(), hip = new ArrayList<String>(), Diagnostic_Final = new ArrayList<String>();
+    //listes de stockage pour la Jtable de la page accueil lors du bouton "Chercher"
+    public ArrayList<String> patient1 = new ArrayList<String>(), age1 = new ArrayList<String>(), gender1 = new ArrayList<String>(), cholesterol1 = new ArrayList<String>(),
+            glucose1 = new ArrayList<String>(), systolic_bp1 = new ArrayList<String>(), diastolic_bp1 = new ArrayList<String>(),
+            height1 = new ArrayList<String>(), weight1 = new ArrayList<String>(), bmi1 = new ArrayList<String>(),
+            waist1 = new ArrayList<String>(), hip1 = new ArrayList<String>(), Diagnostic_Final1 = new ArrayList<String>();
 
     //constructeur
     public FuzzyOntology(String link) throws OWLOntologyCreationException {
@@ -245,7 +250,7 @@ public class FuzzyOntology {
     }
 
     public ArrayList<String> getIndividulsByClass(String nameClass) throws Exception {
-        ArrayList<String> ip=new ArrayList<String>();
+        ArrayList<String> ip = new ArrayList<String>();
 
         manager = OWLManager.createOWLOntologyManager();
         OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
@@ -266,12 +271,15 @@ public class FuzzyOntology {
                     patient.add(ind.getIRI().getFragment());                   //ajouter l'instance patient à l'array list
                     dp = null;
                     // récupérer la dataproperty "Diagnostic_Final" pour le patient courant
-                    for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()){ //pour chaque dataproperty
-                        if (ont.getIRI().getFragment().equals("Diagnostic_Final") ){              //selectionner le dataproperty Diagnostic_Final
-                            dp = ont  ;
-                            Set<OWLLiteral>  values = reasoner.getDataPropertyValues(ind, dp);       //trouver les valeurs de Diagnostic_Final du patient
-                            if (values == null) {Diagnostic_Final.add(null); }
-                            for(OWLLiteral ol: values){ System.out.print(" \t: Diagnostic_Final = " + ol.getLiteral());
+                    for (OWLDataProperty ont : ontology.getDataPropertiesInSignature()) { //pour chaque dataproperty
+                        if (ont.getIRI().getFragment().equals("Diagnostic_Final")) {              //selectionner le dataproperty Diagnostic_Final
+                            dp = ont;
+                            Set<OWLLiteral> values = reasoner.getDataPropertyValues(ind, dp);       //trouver les valeurs de Diagnostic_Final du patient
+                            if (values == null) {
+                                Diagnostic_Final.add(null);
+                            }
+                            for (OWLLiteral ol : values) {
+                                System.out.print(" \t: Diagnostic_Final = " + ol.getLiteral());
                                 //ajouter leur Age
                                 Diagnostic_Final.add(ol.getLiteral());                                                   //ajouter ces valeurs à l'arraylist Diagnostic_Final
                             }
@@ -283,7 +291,7 @@ public class FuzzyOntology {
                     //AGE
                     OWLObjectProperty op = null;
                     for (OWLObjectProperty opp : ontology.getObjectPropertiesInSignature()) {    //pour chaque objectproperty
-                        if (opp.getIRI().getFragment().equals("Has_age")) {                   // selectionner le objectproperty hasage
+                        if (opp.getIRI().getFragment().equals("Has_age")) {                   // selectionner le objectproperty has_age
 
                             op = opp;
                         }
@@ -562,5 +570,32 @@ public class FuzzyOntology {
                 }
             }
         }
-    return ip;}
+        return ip;
+    }
+
+    public void RechercherPatient(String nameClass, String nameP) throws OWLOntologyCreationException {
+        manager = OWLManager.createOWLOntologyManager();
+        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);            //manager de l'ontologie
+        OWLDataProperty dp;
+        OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);      //reasonner de l'ontologie
+        for (OWLClass cls : ontology.getClassesInSignature()) {
+            if (cls.getIRI().getFragment().equals(nameClass)) {                            // trouver la classe patient
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);  // toutes les instances de la classe patient
+                for (OWLNamedIndividual ind : instances.getFlattened()) {
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals(nameP)) {                              //trouver l'instance cible c-a-c avec le nom recherché
+                        patient1.add(nameP);                                                   //l'ajouter l'instance à l'array list
+                        System.err.println("" + ind.getIRI().getFragment());
+                        dp = null;
+
+
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
 }
