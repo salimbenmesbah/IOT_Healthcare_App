@@ -269,7 +269,7 @@ public class Patient {
 
         net.setEvidence("Gender",sexe);
         net.updateBeliefs();
-        resultat = net.getNodeValue(11);
+        resultat = net.getNodeValue("Diabete_diagnosis");
 
 
 

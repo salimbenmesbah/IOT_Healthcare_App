@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit10" />
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="commit10">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ValidationKFold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationKFold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,20 +61,7 @@
       <recent name="C:\Users\USER\IdeaProjects\PFE_Master\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="AjouterPatient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.AjouterPatient" />
-      <module name="PFE_Master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ValidationKFold">
     <configuration name="DataSetchargement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataSetchargement" />
       <module name="PFE_Master" />
@@ -112,8 +103,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidationKFold" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ValidationKFold" />
+      <module name="PFE_Master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.AjouterPatient" />
+      <item itemvalue="Application.ValidationKFold" />
       <item itemvalue="Application.DataSetchargement" />
       <item itemvalue="Application.Patient" />
       <item itemvalue="Application.InferenceFloue" />
@@ -121,6 +119,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ValidationKFold" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.DataSetchargement" />
         <item itemvalue="Application.Patient" />
@@ -214,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654462587165</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit10">
+      <created>1654505430410</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654505430410</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
