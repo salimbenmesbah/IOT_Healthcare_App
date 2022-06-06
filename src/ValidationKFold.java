@@ -383,7 +383,7 @@ public class ValidationKFold {
             //pourquoi ne pas essayé deux boucle la premier pour le train commance de 1 a k  et dedans une autres boucle qui commance de K a j et j--
             for (int i=1;i<=k;i++){
                 String content1=  c.getTest(i, sizeoffold,c.dataset) ;
-                String content2= c.getTrain(i, sizeoffold, c.dataset);
+                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\Dataset_Finale.csv");
                 usingBufferedWritter(content1,c.test);
                 usingBufferedWritter(content2,c.train);
                 c.net= new Network();
