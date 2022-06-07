@@ -15,6 +15,9 @@ import java.io.File;
 public class Patient {
     String nom_patient,age,sexe,chol,glu,tas,tad,taille,poids,imc,tt,th;
     String age1,sexe1,chol1,glu1,tas1,tad1,taille1,poids1,imc1,tt1,th1;
+
+
+
     String k = "";
     double maxVal = 0;
     double[] resultat;
@@ -281,10 +284,14 @@ public class Patient {
         //resultat[0] représente l'état YES du noeud diagnostic
         //resultat[1] représente l'état NO du noeud diagnostic
 
-        if (maxVal == resultat[0]) { k= "Ce patient est atteint du diabète"; o.addDataProperty(nom_patient,"Diagnostic_Final","true");}
-        if (maxVal == resultat[1]) { k= "Ce patient n'est pas atteint du diabète"; o.addDataProperty(nom_patient,"Diagnostic_Final","false");}
+//        if (maxVal == resultat[0]) { k= "Ce patient est atteint du diabète";
+//            o.addDataProperty(nom_patient,"Diagnostic_Final","true");}
+//        if (maxVal == resultat[1]) { k= "Ce patient n'est pas atteint du diabète";
+//            o.addDataProperty(nom_patient,"Diagnostic_Final","false");}
+        if (maxVal == resultat[0]) { k= "Diabetes"; }
+        if (maxVal == resultat[1]) { k= "No diabetes";}
 
-        System.out.println(k);
+//        System.out.println(k);
 
     }
 
@@ -411,6 +418,9 @@ public class Patient {
 
     public String getTh() {
         return th;
+    }
+    public String getK() {
+        return k;
     }
 
     public double[] getResultat() {

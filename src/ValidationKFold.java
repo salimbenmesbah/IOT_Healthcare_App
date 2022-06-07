@@ -2,6 +2,11 @@ import com.fuzzylite.term.Trapezoid;
 import com.fuzzylite.variable.InputVariable;
 import réseauxBayésiens.Fuzzification;
 import smile.Network;
+import smile.SMILEException;
+import smile.learning.DataMatch;
+import smile.learning.DataSet;
+import smile.learning.EM;
+import smile.learning.Validator;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -20,11 +25,12 @@ public class ValidationKFold {
     LinkedList<Float> allprecision = new LinkedList<>();
 
 
-    public ValidationKFold(String dataset, String train, String test, int k) {
+    public ValidationKFold(String dataset, String train, String test, int k,Network net) {
         this.train = train;
         this.dataset = dataset;
         this.test = test;
         this.k = k;
+        this.net = net;
     }
 
     public void inference() throws IOException {
@@ -122,10 +128,10 @@ public class ValidationKFold {
                         evaluer_age[0] = ((float) evaluer_age[0] / somme);
                         evaluer_age[1] = ((float) evaluer_age[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Age", evaluer_age);
+                    if (somme != 0) net.setVirtualEvidence("age", evaluer_age);
 
                 } else if (i == 2 && !temp.equals("*")) {
-                    net.setEvidence("Gender", temp);
+                    net.setEvidence("gender", temp);
                 } else if (i == 3 && !temp.equals("*")) {
                     evaluer_cholesterol[0] = f.getMembershipDegree(Cholesterol, Double.parseDouble(temp), "High_Cholesterol");
                     evaluer_cholesterol[1] = f.getMembershipDegree(Cholesterol, Double.parseDouble(temp), "Low_Cholesterol");
@@ -134,7 +140,7 @@ public class ValidationKFold {
                         evaluer_cholesterol[0] = ((float) evaluer_cholesterol[0] / somme);
                         evaluer_cholesterol[1] = ((float) evaluer_cholesterol[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Cholesterol", evaluer_cholesterol);
+                    if (somme != 0) net.setVirtualEvidence("cholesterol", evaluer_cholesterol);
 
                 } else if (i == 4 && !temp.equals("*")) {
                     evaluer_glucose[0] = f.getMembershipDegree(Glucose, Double.parseDouble(temp), "High_Glucose");
@@ -144,7 +150,7 @@ public class ValidationKFold {
                         evaluer_glucose[0] = ((float) evaluer_glucose[0] / somme);
                         evaluer_glucose[1] = ((float) evaluer_glucose[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Glucose", evaluer_glucose);
+                    if (somme != 0) net.setVirtualEvidence("glucose", evaluer_glucose);
 
                 }
                   else if (i == 5 && !temp.equals("*")) {
@@ -155,7 +161,7 @@ public class ValidationKFold {
                         evaluer_tas[0] = ((float) evaluer_tas[0] / somme);
                         evaluer_tas[1] = ((float) evaluer_tas[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Systolic_bp", evaluer_tas);
+                    if (somme != 0) net.setVirtualEvidence("systolic_bp", evaluer_tas);
 
                 }
                   else if (i == 6 && !temp.equals("*")) {
@@ -166,7 +172,7 @@ public class ValidationKFold {
                         evaluer_tad[0] = ((float) evaluer_tad[0] / somme);
                         evaluer_tad[1] = ((float) evaluer_tad[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Diastolic_bp", evaluer_tad);
+                    if (somme != 0) net.setVirtualEvidence("diastolic_bp", evaluer_tad);
 
                 }
                   else if (i == 7 && !temp.equals("*")) {
@@ -177,7 +183,7 @@ public class ValidationKFold {
                         evaluer_taille[0] = ((float) evaluer_taille[0] / somme);
                         evaluer_taille[1] = ((float) evaluer_taille[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Height", evaluer_taille);
+                    if (somme != 0) net.setVirtualEvidence("height", evaluer_taille);
 
                 }
                   else if (i == 8 && !temp.equals("*")) {
@@ -188,7 +194,7 @@ public class ValidationKFold {
                         evaluer_poids[0] = ((float) evaluer_poids[0] / somme);
                         evaluer_poids[1] = ((float) evaluer_poids[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Weight", evaluer_poids);
+                    if (somme != 0) net.setVirtualEvidence("weight", evaluer_poids);
 
                 }
                   else if (i == 9 && !temp.equals("*")) {
@@ -199,7 +205,7 @@ public class ValidationKFold {
                         evaluer_imc[0] = ((float) evaluer_imc[0] / somme);
                         evaluer_imc[1] = ((float) evaluer_imc[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("BMI", evaluer_imc);
+                    if (somme != 0) net.setVirtualEvidence("bmi", evaluer_imc);
 
                 }
                   else if (i == 10 && !temp.equals("*")) {
@@ -210,7 +216,7 @@ public class ValidationKFold {
                         evaluer_tour_taille[0] = ((float) evaluer_tour_taille[0] / somme);
                         evaluer_tour_taille[1] = ((float) evaluer_tour_taille[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Waist", evaluer_tour_taille);
+                    if (somme != 0) net.setVirtualEvidence("waist", evaluer_tour_taille);
 
                 }
                   else if (i == 11 && !temp.equals("*")) {
@@ -221,12 +227,12 @@ public class ValidationKFold {
                         evaluer_tour_hanche[0] = ((float) evaluer_tour_hanche[0] / somme);
                         evaluer_tour_hanche[1] = ((float) evaluer_tour_hanche[1] / somme);
                     }
-                    if (somme != 0) net.setVirtualEvidence("Hip", evaluer_tour_hanche);
+                    if (somme != 0) net.setVirtualEvidence("hip", evaluer_tour_hanche);
 
                 }
                   else if (i == 12 && !temp.equals("*")) {
                     net.updateBeliefs();
-                    resultat = net.getNodeValue("Diabete_diagnosis");
+                    resultat = net.getNodeValue("diabetes");
                     //gestion tablo resultat
 //                    for (int j = 0; j < resultat.length; j++) {
 //                        System.out.println("resultat"+j+":"+resultat[j]);
@@ -363,11 +369,14 @@ public class ValidationKFold {
         );
 
 
-        for (int fold=2;fold<=11;fold++){
+
+        for (int fold=2;fold<=11;fold++){ // on applique fold fois l'agorithme de kfold
+            Network Net = new Network();
+            Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network1.xdsl");
             ValidationKFold c=new ValidationKFold("D:\\dataset\\NotreDT_ordonée.csv",
                     "D:\\dataset\\Train.txt",
                     "D:\\dataset\\Test.txt",
-                    fold);
+                    fold,Net);
             BufferedReader br = new BufferedReader(new FileReader(c.dataset));
             String line;
             line = br.readLine();
@@ -378,16 +387,19 @@ public class ValidationKFold {
 
 
             int k=c.k;
-            int sizeoffold= 391 /c.k;
+            int sizeoffold= 390 /c.k;
 //            System.out.print (" K="+fold+"\n");           //l'execution du k fold
-            //pourquoi ne pas essayé deux boucle la premier pour le train commance de 1 a k  et dedans une autres boucle qui commance de K a j et j--
+           // cette 2eme boucle pour les itérations de chaque algorithme k fold appliqué
             for (int i=1;i<=k;i++){
-                String content1=  c.getTest(i, sizeoffold,c.dataset) ;
-                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\Dataset_Finale.csv");
+                String content1=  c.getTest(i, sizeoffold,c.dataset) ; //gettest est unemethode qui récupère les données pour le test a partir du dataset
+                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\Dataset_Finale2.csv");//gettrain est unemethode qui récupère les données pour le train a partir du dataset
                 usingBufferedWritter(content1,c.test);
                 usingBufferedWritter(content2,c.train);
-                c.net= new Network();
-                c.net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\RéseauBayesienClassique2.xdsl");
+                DataSet ds = new DataSet();
+                ds.readFile(c.train);
+                DataMatch[] matching = ds.matchNetwork(c.net);
+                EM em = new EM();
+                em.learn(ds, c.net, matching);   //apprentissage a partir du DT_train fait
                 c.inference();
                 c.net.clearAllEvidence();
             }
