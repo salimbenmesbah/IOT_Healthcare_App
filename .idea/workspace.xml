@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/src/ValidationPrg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ValidationKFold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationKFold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +102,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DataSetchargement" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Patient" />
-      <item itemvalue="Application.ValidationKFold" />
       <item itemvalue="Application.ValidationPrg" />
+      <item itemvalue="Application.ValidationKFold" />
+      <item itemvalue="Application.DataSetchargement" />
+      <item itemvalue="Application.Patient" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
@@ -228,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654548167020</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="validation">
+      <created>1654634209416</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654634209416</updated>
+    </task>
+    <task id="LOCAL-00016" summary="validation">
+      <created>1654634250559</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654634250559</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
