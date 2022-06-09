@@ -14,12 +14,12 @@ public class DataSetchargement {
     public static void main(String[] args) throws FileNotFoundException, OWLOntologyCreationException, OWLOntologyStorageException {
         String csvPath= "D:\\dataset\\NotreDT_ordonée.csv";
         try {
-            BufferedReader lineReader = new BufferedReader(new FileReader(csvPath));
+            BufferedReader lineReader = new BufferedReader(new FileReader(csvPath)); //ouvrir et lire dataset
             String lineText = null;
 
 
             lineReader.readLine(); // skip le header
-            while ((lineText = lineReader.readLine()) != null){
+            while ((lineText = lineReader.readLine()) != null){ //pour chaque ligne
                 String[] data = lineText.split(",");
 
                 String patient_num = "patient"+data[0];
@@ -49,8 +49,6 @@ public class DataSetchargement {
 
 
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

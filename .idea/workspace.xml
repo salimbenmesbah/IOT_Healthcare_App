@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="validation">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2022_22_59_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2022_22_59__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_2022_10_05_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_06_2022_10_05__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSetchargement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSetchargement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ValidationPrg.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +65,7 @@
       <recent name="C:\Users\USER\IdeaProjects\PFE_Master\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ValidationKFold">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DataSetchargement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataSetchargement" />
       <module name="PFE_Master" />
@@ -110,9 +116,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ValidationKFold" />
         <item itemvalue="Application.ValidationPrg" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DataSetchargement" />
         <item itemvalue="Application.Patient" />
       </list>
@@ -239,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654634250559</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="validation">
+      <created>1654711270067</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654711270067</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
