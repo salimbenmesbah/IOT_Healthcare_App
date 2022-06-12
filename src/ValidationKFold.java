@@ -94,7 +94,6 @@ public class ValidationKFold {
         InputVariable Hip = f.createFuzzyNode("Waist", 30, 64);
         f.addFuzzyState(Hip, new Trapezoid("Thin_Hip", 30, 30, 39.52, 48.98));
         f.addFuzzyState(Hip, new Trapezoid("Large_Hip", 39.52, 48.98, 64, 64));
-        String oldFileName = "C:\\Users\\Winsido\\Desktop\\m\\les maladies UCI\\hepatits C\\nvprojet\\classificationfloue\\full.txt";
         Scanner scanner;
 
         BufferedReader br = null;

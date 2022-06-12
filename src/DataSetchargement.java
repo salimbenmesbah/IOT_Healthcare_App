@@ -35,7 +35,6 @@ public class DataSetchargement {
                 String tt = data[10];
                 String th = data[11];
 
-
                 Patient P = new Patient(patient_num,age,sexe,chol,glu,tas,tad,taille,poids,imc,tt,th);
                 P.AddToOntology();
                 if (data[12].equals("Diabetes")){
