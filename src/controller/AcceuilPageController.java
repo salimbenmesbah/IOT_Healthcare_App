@@ -113,7 +113,7 @@ public class AcceuilPageController {
                 while (i < ontologiecharge.patient.size()) {
                     model.addRow(new Object[]{ontologiecharge.patient.get(i), ontologiecharge.age.get(i), ontologiecharge.gender.get(i), ontologiecharge.cholesterol.get(i),
                             ontologiecharge.glucose.get(i), ontologiecharge.systolic_bp.get(i), ontologiecharge.diastolic_bp.get(i),
-                            (int) Math.round(Float.parseFloat(ontologiecharge.height.get(i)) * 2.54), (int) Math.round(Float.parseFloat(ontologiecharge.weight.get(i)) * 0.45),
+                            (int) Math.round(Float.parseFloat(ontologiecharge.height.get(i))), (int) Math.round(Float.parseFloat(ontologiecharge.weight.get(i))),
                             ontologiecharge.bmi.get(i), ontologiecharge.waist.get(i), ontologiecharge.hip.get(i), ontologiecharge.Diagnostic_Final.get(i)});
                     i++;
                 }

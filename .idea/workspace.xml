@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/src/ValidationKFoldclassic.java" afterDir="false" />
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="validationclassic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataSetchargement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSetchargement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ValidationKFold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationKFold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ValidationKFoldclassic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationKFoldclassic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ontologie/OntologieFinale.owl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ontologie/OntologieFinale.owl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ontologie/catalog-v001.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
       <recent name="C:\Users\USER\IdeaProjects\PFE_Master\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ValidationKFoldclassic">
+  <component name="RunManager" selected="Application.DataSetchargement">
     <configuration name="DataSetchargement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataSetchargement" />
       <module name="PFE_Master" />
@@ -107,11 +110,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataSetchargement" />
+        <item itemvalue="Application.ValidationKFold" />
         <item itemvalue="Application.ValidationKFoldclassic" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ValidationKFold" />
         <item itemvalue="Application.ValidationPrg" />
-        <item itemvalue="Application.DataSetchargement" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655034624654</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="validationclassic">
+      <created>1655036718288</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1655036718288</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,7 +286,8 @@
     <MESSAGE value="commit1" />
     <MESSAGE value="commit10" />
     <MESSAGE value="validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation" />
+    <MESSAGE value="validationclassic" />
+    <option name="LAST_COMMIT_MESSAGE" value="validationclassic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

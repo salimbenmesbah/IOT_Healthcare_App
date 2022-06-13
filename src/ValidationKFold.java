@@ -387,11 +387,12 @@ public class ValidationKFold {
 
             int k=c.k;
             int sizeoffold= 390 /c.k;
+            System.out.println("Inférence systeme:");
 //            System.out.print (" K="+fold+"\n");           //l'execution du k fold
            // cette 2eme boucle pour les itérations de chaque algorithme k fold appliqué
             for (int i=1;i<=k;i++){
                 String content1=  c.getTest(i, sizeoffold,c.dataset) ; //gettest est unemethode qui récupère les données pour le test a partir du dataset
-                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\Dataset_Finale2.csv");//gettrain est unemethode qui récupère les données pour le train a partir du dataset
+                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\NotreDT_ordonée_nominalisé.csv");//gettrain est unemethode qui récupère les données pour le train a partir du dataset
                 usingBufferedWritter(content1,c.test);
                 usingBufferedWritter(content2,c.train);
                 DataSet ds = new DataSet();

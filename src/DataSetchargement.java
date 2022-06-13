@@ -13,6 +13,7 @@ import java.io.IOException;
 public class DataSetchargement {
     public static void main(String[] args) throws FileNotFoundException, OWLOntologyCreationException, OWLOntologyStorageException {
         String csvPath= "D:\\dataset\\NotreDT_ordonée.csv";
+        int i=1;
         try {
             BufferedReader lineReader = new BufferedReader(new FileReader(csvPath)); //ouvrir et lire dataset
             String lineText = null;
@@ -42,7 +43,9 @@ public class DataSetchargement {
                 } else if (data[12].equals("No diabetes")){
                     P.AddDiagnostic(0);
                 }
-                System.out.println("Fait!");
+                System.out.println("Fait!"+i);
+                i++;
+
             }
             lineReader.close();
 
