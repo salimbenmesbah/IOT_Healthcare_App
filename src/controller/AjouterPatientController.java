@@ -10,6 +10,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class AjouterPatientController {
@@ -65,9 +67,141 @@ public class AjouterPatientController {
         ap.getAccueil().addMouseListener(new MouseAdapter() {  //Modifier les informations du patient dans l'ontologie lorsqu'on clique sur le bouton "Modifier",
             //remplacer getAjouter()par getModifier()
             public void mouseClicked(MouseEvent ev) {
-                ap.setVisible(false);
+                AcceuilPage mnv=new AcceuilPage();
+                AcceuilPageController c;
+                try {
+                    c = new AcceuilPageController(mnv);
+                    ap.setVisible(false);
+                    c.initControlleur();
+                } catch (Exception ex) {
+                    Logger.getLogger(AjouterPatientController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
+
+        ap.getNom().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_0 || ev.getKeyCode() == KeyEvent.VK_1 || ev.getKeyCode() == KeyEvent.VK_2 || ev.getKeyCode() == KeyEvent.VK_3 || ev.getKeyCode() == KeyEvent.VK_4
+                        || ev.getKeyCode() == KeyEvent.VK_5 || ev.getKeyCode() == KeyEvent.VK_6 || ev.getKeyCode() == KeyEvent.VK_7 || ev.getKeyCode() == KeyEvent.VK_8 || ev.getKeyCode() == KeyEvent.VK_9 ||
+                        ev.getKeyCode() == KeyEvent.VK_NUMPAD0 || ev.getKeyCode() == KeyEvent.VK_NUMPAD1 || ev.getKeyCode() == KeyEvent.VK_NUMPAD2 || ev.getKeyCode() == KeyEvent.VK_NUMPAD3 || ev.getKeyCode() == KeyEvent.VK_NUMPAD4
+                        || ev.getKeyCode() == KeyEvent.VK_NUMPAD5 || ev.getKeyCode() == KeyEvent.VK_NUMPAD6 || ev.getKeyCode() == KeyEvent.VK_NUMPAD7 || ev.getKeyCode() == KeyEvent.VK_NUMPAD8 || ev.getKeyCode() == KeyEvent.VK_NUMPAD9)
+                {JOptionPane.showMessageDialog(null, "le nom ne peut contenir de chiffres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getNom().setText("");
+                }
+            }
+        });
+        ///////////////////////////////////////////////////////////////////
+        ap.getAge().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "l'âge ne peut contir de lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getAge().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////////////////
+        ap.getChol().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le cholesterol ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getChol().setText("");
+                }
+            }
+        });
+        /////////////////////////////////////////////////////////////////
+        ap.getGlu().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le glucose ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getGlu().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////////////////
+        ap.getTas().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le tas ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getTas().setText("");
+                }
+            }
+        });
+        ////////////////////////////////////////////////
+        ap.getTad().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le tad ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getTad().setText("");
+                }
+            }
+        });
+        ////////////////////////////////////////////////////
+        ap.getTaille().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "la taille ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getTaille().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////
+        ap.getPoids().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le poids ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getPoids().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////
+        ap.getImc().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "l'imc' ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getImc().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////
+        ap.getTt().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le tt ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getTt().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////
+        ap.getTh().addKeyListener(new KeyAdapter() {
+            public void keyReleased (KeyEvent ev) {
+                if(ev.getKeyCode() == KeyEvent.VK_A || ev.getKeyCode() == KeyEvent.VK_Z || ev.getKeyCode() == KeyEvent.VK_E || ev.getKeyCode() == KeyEvent.VK_R || ev.getKeyCode() == KeyEvent.VK_T || ev.getKeyCode() == KeyEvent.VK_Y || ev.getKeyCode() == KeyEvent.VK_U || ev.getKeyCode() == KeyEvent.VK_I || ev.getKeyCode() == KeyEvent.VK_O || ev.getKeyCode() == KeyEvent.VK_P
+                        || ev.getKeyCode() == KeyEvent.VK_Q || ev.getKeyCode() == KeyEvent.VK_S || ev.getKeyCode() == KeyEvent.VK_D || ev.getKeyCode() == KeyEvent.VK_F || ev.getKeyCode() == KeyEvent.VK_G || ev.getKeyCode() == KeyEvent.VK_H || ev.getKeyCode() == KeyEvent.VK_J || ev.getKeyCode() == KeyEvent.VK_K || ev.getKeyCode() == KeyEvent.VK_L || ev.getKeyCode() == KeyEvent.VK_M || ev.getKeyCode() == KeyEvent.VK_W
+                        || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
+                    JOptionPane.showMessageDialog(null, "le th ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
+                    ap.getTh().setText("");
+                }
+            }
+        });
+        //////////////////////////////////////////////////////
+
     }
 
 
