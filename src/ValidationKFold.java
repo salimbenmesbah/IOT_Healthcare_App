@@ -45,60 +45,60 @@ public class ValidationKFold {
         double[] evaluer_tour_taille = new double[2];
         double[] evaluer_tour_hanche = new double[2];
         double TP = 0.0, TN = 0.0, FP = 0.0, FN = 0.0;
-        Fuzzification f = new Fuzzification();
+        Fuzzification f = new Fuzzification();//Là je règle les fonctions d'appartenance pour les etats des noeuds du réseau bayésien pourle rendre flou
         //ajouter var floue age
         InputVariable Age = f.createFuzzyNode("Age", 19, 92);
-        f.addFuzzyState(Age, new Trapezoid("AgeYoung", 19, 19, 34, 63));
-        f.addFuzzyState(Age, new Trapezoid("AgeOld", 34, 63, 92, 92));
+        f.addFuzzyState(Age, new Trapezoid("AgeYoung", 15, 15, 35, 61));
+        f.addFuzzyState(Age, new Trapezoid("AgeOld", 35, 61, 92, 92));
 
         //ajouter var floue cholesterol
         InputVariable Cholesterol = f.createFuzzyNode("Cholesterol", 78, 443);
-        f.addFuzzyState(Cholesterol, new Trapezoid("Low_Cholesterol", 78, 78, 180.36, 251.11));
-        f.addFuzzyState(Cholesterol, new Trapezoid("High_Cholesterol", 180.36, 251.11, 443, 443));
+        f.addFuzzyState(Cholesterol, new Trapezoid("Low_Cholesterol", 78, 78, 182, 251.11));
+        f.addFuzzyState(Cholesterol, new Trapezoid("High_Cholesterol", 182, 251.11, 443, 443));
 
         //ajouter var floue tas
         InputVariable Glucose = f.createFuzzyNode("Glucose", 48, 385);
-        f.addFuzzyState(Glucose, new Trapezoid("Low_Glucose", 48, 48, 89.97, 242.93));
-        f.addFuzzyState(Glucose, new Trapezoid("High_Glucose", 89.97, 242.93, 385, 385));
+        f.addFuzzyState(Glucose, new Trapezoid("Low_Glucose", 48, 48, 87, 217));
+        f.addFuzzyState(Glucose, new Trapezoid("High_Glucose", 87, 217, 385, 385));
 
-        InputVariable Systolic_bp = f.createFuzzyNode("Systolic_bp", 48, 124);
-        f.addFuzzyState(Systolic_bp, new Trapezoid("Low_systolic_bp", 90, 90, 125.14, 164.15));
-        f.addFuzzyState(Systolic_bp, new Trapezoid("High_systolic_bp", 125.14, 164.15, 250, 250));
+        InputVariable Systolic_bp = f.createFuzzyNode("Systolic_bp", 90, 250);
+        f.addFuzzyState(Systolic_bp, new Trapezoid("Low_systolic_bp", 90, 90, 125, 157));
+        f.addFuzzyState(Systolic_bp, new Trapezoid("High_systolic_bp", 125, 157, 250, 250));
 
         //ajouter var floue tad
         InputVariable Diastolic_bp = f.createFuzzyNode("Diastolic_bp", 48, 124);
-        f.addFuzzyState(Diastolic_bp, new Trapezoid("Low_diastolic_bp", 48, 48, 73.23, 94.89));
-        f.addFuzzyState(Diastolic_bp, new Trapezoid("High_diastolic_bp", 73.23, 94.89, 124, 124));
+        f.addFuzzyState(Diastolic_bp, new Trapezoid("Low_diastolic_bp", 48, 48, 75, 104));
+        f.addFuzzyState(Diastolic_bp, new Trapezoid("High_diastolic_bp", 75, 104, 124, 124));
 
         //ajouter var floue taille
-        InputVariable Height = f.createFuzzyNode("Height", 52, 76);
-        f.addFuzzyState(Height, new Trapezoid("Low_Height", 52, 52, 62.82, 69.45));
-        f.addFuzzyState(Height, new Trapezoid("High_Height", 62.82, 69.45, 76, 76));
+        InputVariable Height = f.createFuzzyNode("Height", 122.08,203.04);
+        f.addFuzzyState(Height, new Trapezoid("Low_Height",122.08,122.08, 150,178));
+        f.addFuzzyState(Height, new Trapezoid("High_Height",150,178,203.04,203.04));
 
         //ajouter var floue poids
-        InputVariable Weight = f.createFuzzyNode("Weight", 99, 325);
-        f.addFuzzyState(Weight, new Trapezoid("Low_Weight", 99, 99, 153.29, 220.55));
-        f.addFuzzyState(Weight, new Trapezoid("High_Weight", 153.29, 220.55, 325, 325));
+        InputVariable Weight = f.createFuzzyNode("Weight", 40, 150);
+        f.addFuzzyState(Weight, new Trapezoid("Low_Weight", 40, 40, 69,98));
+        f.addFuzzyState(Weight, new Trapezoid("High_Weight", 69,98, 150, 150));
 
         //ajouter var floue imc
         InputVariable BMI = f.createFuzzyNode("BMI", 15.2, 55.8);
-        f.addFuzzyState(BMI, new Trapezoid("BMIslim", 15.2, 15.2, 24.74, 35.94));
-        f.addFuzzyState(BMI, new Trapezoid("BMIobese", 24.74, 35.94, 55.8, 55.8));
+        f.addFuzzyState(BMI, new Trapezoid("BMIslim", 15, 15, 24, 34));
+        f.addFuzzyState(BMI, new Trapezoid("BMIobese", 24, 34, 56, 56));
 
         //ajouter var floue tt
         InputVariable Waist = f.createFuzzyNode("Waist", 26, 56);
-        f.addFuzzyState(Waist, new Trapezoid("Thin_Waist", 26, 26, 33.74, 43.55));
-        f.addFuzzyState(Waist, new Trapezoid("Large_Waist", 33.74, 43.55, 56, 56));
+        f.addFuzzyState(Waist, new Trapezoid("Thin_Waist", 26, 26, 32, 43));
+        f.addFuzzyState(Waist, new Trapezoid("Large_Waist", 32, 43, 60, 60));
 
         //ajouter var floue th
-        InputVariable Hip = f.createFuzzyNode("Waist", 30, 64);
-        f.addFuzzyState(Hip, new Trapezoid("Thin_Hip", 30, 30, 39.52, 48.98));
-        f.addFuzzyState(Hip, new Trapezoid("Large_Hip", 39.52, 48.98, 64, 64));
+        InputVariable Hip = f.createFuzzyNode("Hip", 30, 64);
+        f.addFuzzyState(Hip, new Trapezoid("Thin_Hip", 30, 30, 41, 47));
+        f.addFuzzyState(Hip, new Trapezoid("Large_Hip", 41, 47, 69, 69));
         Scanner scanner;
 
         BufferedReader br = null;
 
-        br = new BufferedReader(new FileReader(test));
+        br = new BufferedReader(new FileReader(test));//charger le dataset pour le lire et le parcourir
         String line;
         int cmp = 0;
         String temp = "";
@@ -109,11 +109,12 @@ public class ValidationKFold {
         int i;
         line = br.readLine();
         //node=line.split(",");
-        while ((line = br.readLine()) != null) {
+        while ((line = br.readLine()) != null) {    //parcourir les lignes  donc dans cette boucle chaque itération correspond à une ligne
 
             scanner = new Scanner(line);
-            scanner.useDelimiter(",");
-            i = 0;
+            scanner.useDelimiter(",");//ici j'ai séparé par une virgule pour dire que les différentes valeurs du dataset sont séparées par une virgule
+            //comme ci 9essemna chaque lignes en un vecteur
+            i = 0;//ici on va lire  la ligne et utiliser les valeurs de cette ligne en tant que evidences/ virtualevidances pour les affecter aux états des noeuds
             while (scanner.hasNext()) {
                 temp = scanner.next();
                 if (i == 0 && !temp.equals("*")) {
@@ -229,7 +230,7 @@ public class ValidationKFold {
                     if (somme != 0) net.setVirtualEvidence("hip", evaluer_tour_hanche);
 
                 }
-                  else if (i == 12 && !temp.equals("*")) {
+                  else if (i == 12 && !temp.equals("*")) {//c'est le noeud qui représente le diagnostic donc ici on rajoute une comparaison entre la valeur originale du dataset et la valeur qu'on a prédit pour ensuite calculer les accuracy, rappel, precision
                     net.updateBeliefs();
                     resultat = net.getNodeValue("diabetes");
                     //gestion tablo resultat
@@ -294,7 +295,7 @@ public class ValidationKFold {
 
     ///////////////////////////////////////////
     ///////////////////////////////////////////
-    public String getTrain(int iter, int sizezOffold, String dataset) throws FileNotFoundException, IOException {
+    public String getTrain(int iter, int sizezOffold, String dataset) throws FileNotFoundException, IOException { //fct pour generer un dataset pour le train a partir du dataset original
 
         BufferedReader br = new BufferedReader(new FileReader(dataset));
         String line;
@@ -315,7 +316,7 @@ public class ValidationKFold {
         return content;
     }
 
-    public String getTest(int iter, int sizezOffold, String dataset) throws FileNotFoundException, IOException {
+    public String getTest(int iter, int sizezOffold, String dataset) throws FileNotFoundException, IOException {//fct pour generer un dataset pour le test a partir du dataset original
 
         BufferedReader br = new BufferedReader(new FileReader(dataset));
         String line;
@@ -369,10 +370,10 @@ public class ValidationKFold {
 
 
 
-        for (int fold=2;fold<=11;fold++){ // on applique fold fois l'agorithme de kfold
+        for (int fold=2;fold<=12;fold++){ // on applique fold fois l'agorithme de kfold
             Network Net = new Network();
-            Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network1.xdsl");
-            ValidationKFold c=new ValidationKFold("D:\\dataset\\NotreDT_ordonée.csv",
+            Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network2.xdsl");
+            ValidationKFold c=new ValidationKFold("D:\\dataset\\NotreDT_ordonée1.csv",
                     "D:\\dataset\\Train.txt",
                     "D:\\dataset\\Test.txt",
                     fold,Net);
@@ -386,13 +387,13 @@ public class ValidationKFold {
 
 
             int k=c.k;
-            int sizeoffold= 390 /c.k;
+            int sizeoffold= 560 /c.k;
             System.out.println("Inférence systeme:");
 //            System.out.print (" K="+fold+"\n");           //l'execution du k fold
            // cette 2eme boucle pour les itérations de chaque algorithme k fold appliqué
-            for (int i=1;i<=k;i++){
+            for (int i=1;i<=k;i++){  //lahna dirou les dataset en parametres 3la hsab khedmetkoum
                 String content1=  c.getTest(i, sizeoffold,c.dataset) ; //gettest est unemethode qui récupère les données pour le test a partir du dataset
-                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\NotreDT_ordonée_nominalisé.csv");//gettrain est unemethode qui récupère les données pour le train a partir du dataset
+                String content2= c.getTrain(i, sizeoffold, "D:\\dataset\\NotreDT_ordonée_nominale.csv");//gettrain est unemethode qui récupère les données pour le train a partir du dataset
                 usingBufferedWritter(content1,c.test);
                 usingBufferedWritter(content2,c.train);
                 DataSet ds = new DataSet();

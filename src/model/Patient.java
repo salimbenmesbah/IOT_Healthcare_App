@@ -76,6 +76,13 @@ public class Patient {
         o.addIndividual(tt1, "Waist");
         o.addIndividual(th1, "Hip");
 
+
+        //faudra convertir les variables du patient au type correspondant
+
+
+
+
+
         //ajouter data properties
         o.addDataProperty(age1,"Has_Age",age);
         o.addDataProperty(sexe1,"gender",sexe);
@@ -109,8 +116,56 @@ public class Patient {
 
     public void FuzzificationPatient(Network net) throws OWLOntologyStorageException {
         Fuzzification f = new Fuzzification();
-
-        //ajouter var floue age
+// les valeurs originales sont en commentaires ci dessous,j'ai fait ainsi pour pouvoir tester avec d'autres valeurs
+//        //ajouter var floue age
+//        InputVariable Age = f.createFuzzyNode("Age", 19,92);
+//        f.addFuzzyState(Age, new Trapezoid("AgeYoung",19,19,34,63));
+//        f.addFuzzyState(Age, new Trapezoid("AgeOld",34,63,92,92));
+//
+//        //ajouter var floue cholesterol
+//        InputVariable Cholesterol = f.createFuzzyNode("Cholesterol", 78,443);
+//        f.addFuzzyState(Cholesterol, new Trapezoid("Low_Cholesterol",78,78, 180.36,251.11));
+//        f.addFuzzyState(Cholesterol, new Trapezoid("High_Cholesterol",180.36,251.11,443,443));
+//
+//        //ajouter var floue tas
+//        InputVariable Glucose = f.createFuzzyNode("Glucose", 48,385);
+//        f.addFuzzyState(Glucose, new Trapezoid("Low_Glucose",48,48,89.97,242.93));
+//        f.addFuzzyState(Glucose, new Trapezoid("High_Glucose",89.97,242.93,385,385));
+//
+//        InputVariable Systolic_bp = f.createFuzzyNode("Systolic_bp", 48,124);
+//        f.addFuzzyState(Systolic_bp, new Trapezoid("Low_systolic_bp",90,90, 125.14,164.15));
+//        f.addFuzzyState(Systolic_bp, new Trapezoid("High_systolic_bp",125.14,164.15,250,250));
+//
+//        //ajouter var floue tad
+//        InputVariable Diastolic_bp = f.createFuzzyNode("Diastolic_bp", 48,124);
+//        f.addFuzzyState(Diastolic_bp, new Trapezoid("Low_diastolic_bp",48,48,73.23,94.89));
+//        f.addFuzzyState(Diastolic_bp, new Trapezoid("High_diastolic_bp",73.23,94.89,124,124));
+//
+//        //ajouter var floue taille
+//        InputVariable Height = f.createFuzzyNode("Height", 52,76);
+//        f.addFuzzyState(Height, new Trapezoid("Low_Height",122.08,122.08, 159.74,176.02));
+//        f.addFuzzyState(Height, new Trapezoid("High_Height",159.74,176.02,203.04,203.04));
+//
+//        //ajouter var floue poids
+//        InputVariable Weight = f.createFuzzyNode("Weight", 99,325);
+//        f.addFuzzyState(Weight, new Trapezoid("Low_Weight",40,40, 68.86,98.48));
+//        f.addFuzzyState(Weight, new Trapezoid("High_Weight",68.86,98.48,150,150));
+//
+//        //ajouter var floue imc
+//        InputVariable BMI = f.createFuzzyNode("BMI", 15.2,55.8);
+//        f.addFuzzyState(BMI, new Trapezoid("BMIslim",15.2, 15.2, 24.74,35.94));
+//        f.addFuzzyState(BMI, new Trapezoid("BMIobese",24.74,35.94,55.8,55.8));
+//
+//        //ajouter var floue tt
+//        InputVariable Waist = f.createFuzzyNode("Waist", 26,56);
+//        f.addFuzzyState(Waist, new Trapezoid("Thin_Waist",26, 26, 33.74,43.55));
+//        f.addFuzzyState(Waist, new Trapezoid("Large_Waist",33.74,43.55,56,56));
+//
+//        //ajouter var floue th
+//        InputVariable Hip = f.createFuzzyNode("Waist", 30,64);
+//        f.addFuzzyState(Hip, new Trapezoid("Thin_Hip",30,30,39.52,48.98));
+//        f.addFuzzyState(Hip, new Trapezoid("Large_Hip",39.52,48.98,64,64));
+//ajouter var floue age
         InputVariable Age = f.createFuzzyNode("Age", 19,92);
         f.addFuzzyState(Age, new Trapezoid("AgeYoung",19,19,34,63));
         f.addFuzzyState(Age, new Trapezoid("AgeOld",34,63,92,92));
@@ -135,14 +190,14 @@ public class Patient {
         f.addFuzzyState(Diastolic_bp, new Trapezoid("High_diastolic_bp",73.23,94.89,124,124));
 
         //ajouter var floue taille
-        InputVariable Height = f.createFuzzyNode("Height", 52,76);
-        f.addFuzzyState(Height, new Trapezoid("Low_Height",52,52, 62.82,69.45));
-        f.addFuzzyState(Height, new Trapezoid("High_Height",62.82,69.45,76,76));
+        InputVariable Height = f.createFuzzyNode("Height", 122.08,203.04);
+        f.addFuzzyState(Height, new Trapezoid("Low_Height",122.08,122.08, 159.74,176.02));
+        f.addFuzzyState(Height, new Trapezoid("High_Height",159.74,176.02,203.04,203.04));
 
         //ajouter var floue poids
-        InputVariable Weight = f.createFuzzyNode("Weight", 99,325);
-        f.addFuzzyState(Weight, new Trapezoid("Low_Weight",99,99, 153.29,220.55));
-        f.addFuzzyState(Weight, new Trapezoid("High_Weight",153.29,220.55,325,325));
+        InputVariable Weight = f.createFuzzyNode("Weight", 40,150);
+        f.addFuzzyState(Weight, new Trapezoid("Low_Weight",40,40, 68.86,98.48));
+        f.addFuzzyState(Weight, new Trapezoid("High_Weight",68.86,98.48,150,150));
 
         //ajouter var floue imc
         InputVariable BMI = f.createFuzzyNode("BMI", 15.2,55.8);

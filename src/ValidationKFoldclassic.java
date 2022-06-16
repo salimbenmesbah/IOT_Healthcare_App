@@ -237,10 +237,10 @@ public class ValidationKFoldclassic {
 
 
 
-        for (int fold=2;fold<=11;fold++){ // on applique fold fois l'agorithme de kfold
+        for (int fold=2;fold<=12;fold++){ // on applique fold fois l'agorithme de kfold
             Network Net = new Network();
-            Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network1.xdsl");
-            ValidationKFoldclassic c=new ValidationKFoldclassic("D:\\dataset\\NotreDT_ordonée_nominalisé.csv",
+            Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network2.xdsl");
+            ValidationKFoldclassic c=new ValidationKFoldclassic("D:\\dataset\\NotreDT_ordonée_nominale.csv",
                     "D:\\dataset\\Train.txt",
                     "D:\\dataset\\Test.txt",
                     fold,Net);
@@ -254,7 +254,7 @@ public class ValidationKFoldclassic {
 
 
             int k=c.k;
-            int sizeoffold= 390 /c.k;
+            int sizeoffold= 560 /c.k;
             System.out.println("Inférence classique:");
 //            System.out.print (" K="+fold+"\n");           //l'execution du k fold
             // cette 2eme boucle pour les itérations de chaque algorithme k fold appliqué
