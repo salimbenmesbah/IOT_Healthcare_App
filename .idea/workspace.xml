@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment="ajouter patient en cas d'erreur dans les fields">
+    <list default="true" id="17d63d9b-7ae1-4c25-b719-b5ff2a1df4cf" name="Changes" comment=" cas d'erreur dans les fields modifier+ inférence">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AjouterPatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/InferencePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/InferencePatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AcceuilPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655409718442</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary=" cas d'erreur dans les fields modifier+ inférence">
+      <created>1655478094602</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655478094602</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +302,8 @@
     <MESSAGE value="validationclassic" />
     <MESSAGE value="commit20" />
     <MESSAGE value="ajouter patient en cas d'erreur dans les fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajouter patient en cas d'erreur dans les fields" />
+    <MESSAGE value=" cas d'erreur dans les fields modifier+ inférence" />
+    <option name="LAST_COMMIT_MESSAGE" value=" cas d'erreur dans les fields modifier+ inférence" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -72,8 +72,6 @@ public class AcceuilPageController {
                         acceuil.getTable().getValueAt(indice_ligne_patient, 11).toString()));
                 frame3controlleur.initControlleur();
             }
-
-
         });
         acceuil.getInference().addMouseListener(new MouseAdapter() {
             @Override
