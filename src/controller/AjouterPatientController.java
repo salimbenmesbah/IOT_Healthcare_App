@@ -55,7 +55,7 @@ public class AjouterPatientController {
 
                 try {
                     patient.AddToOntology();
-                    JOptionPane.showMessageDialog(null, "Patient ajouté ","Information",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Patient ajouté!","Information",JOptionPane.INFORMATION_MESSAGE);
 
                 } catch (OWLOntologyStorageException ex) {
                     JOptionPane.showMessageDialog(null, "Revoyez vos attributs","Erreur",JOptionPane.ERROR_MESSAGE);
@@ -78,7 +78,7 @@ public class AjouterPatientController {
                 }
             }
         });
-
+        ///////////
         ap.getNom().addKeyListener(new KeyAdapter() {
             public void keyReleased (KeyEvent ev) {
                 if(ev.getKeyCode() == KeyEvent.VK_0 || ev.getKeyCode() == KeyEvent.VK_1 || ev.getKeyCode() == KeyEvent.VK_2 || ev.getKeyCode() == KeyEvent.VK_3 || ev.getKeyCode() == KeyEvent.VK_4

@@ -71,8 +71,6 @@ public class AcceuilPageController {
                         acceuil.getTable().getValueAt(indice_ligne_patient, 9).toString(), acceuil.getTable().getValueAt(indice_ligne_patient, 10).toString(),
                         acceuil.getTable().getValueAt(indice_ligne_patient, 11).toString()));
                 frame3controlleur.initControlleur();
-
-
             }
 
 
