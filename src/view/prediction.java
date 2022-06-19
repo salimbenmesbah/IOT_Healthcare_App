@@ -50,7 +50,7 @@ public class prediction extends JFrame{
             monaffichage.append("La probabilité que vous ayez le diabète est de\n"+resultatDuPatient[0]*100+"%\n");
         }
         if (resultatDuPatient[1]>resultatDuPatient[0]){
-            monaffichage.append("Donc vous avez plus de chance de ne pas être atteint du diabète\n");
+            monaffichage.append("Donc vous avez plus de chance de ne pas être atteint \n du diabète\n");
         }
         else {
             monaffichage.append("Donc vous avez plus de chance d'être diabètique\n");
@@ -62,10 +62,10 @@ public class prediction extends JFrame{
 
 
         JLabel titre = new JLabel("Résultat");
-        titre.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 18));
+        titre.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 24));
 
-        titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
-        titre.setBounds(309, 10, 101, 44);
+        //titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+        titre.setBounds(309, 10, 300, 44);
         panel.add(titre);
 
         retour = new JButton("Retour");

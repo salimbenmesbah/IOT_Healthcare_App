@@ -28,7 +28,7 @@ public class Main {
 //          frame5.setVisible(true);
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AjouterPatient frame = new AjouterPatient();
+                prediction frame = new prediction(new double[]{0.00, 1.00});
                 //AcceuilPage frame = new AcceuilPage();
                 //ModifierPatient frame = new ModifierPatient();
                 frame.setVisible(true);

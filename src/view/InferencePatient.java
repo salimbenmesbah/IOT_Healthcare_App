@@ -214,9 +214,9 @@ public class InferencePatient extends JFrame {
 
 
         JLabel titre = new JLabel("Diagnostiquer Patient ");
-        titre.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-        titre.setBounds(340, 10, 210, 30);
-        titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+        titre.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD , 24));
+        titre.setBounds(340, 10, 300, 30);
+        //titre.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         paneln.add(titre);
 
         inferer = new JButton("Prédire");
