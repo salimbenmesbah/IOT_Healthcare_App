@@ -46,14 +46,14 @@ public class prediction extends JFrame{
         monaffichage.setBounds(10, 135, 400, 171);
         if (resultatDuPatient != null)
         {
-            monaffichage.append("La probabilité que vous n'ayez pas le diabète est de\n"+resultatDuPatient[1]*100+"%\n");
-            monaffichage.append("La probabilité que vous ayez le diabète est de\n"+resultatDuPatient[0]*100+"%\n");
+            monaffichage.append("La probabilité que vous n'avez pas le diabète est de\n"+resultatDuPatient[1]*100+"%\n");
+            monaffichage.append("La probabilité que vous avez le diabète est de\n"+resultatDuPatient[0]*100+"%\n");
         }
         if (resultatDuPatient[1]>resultatDuPatient[0]){
-            monaffichage.append("Donc vous avez plus de chance de ne pas être atteint \n du diabète\n");
+            monaffichage.append("Vous avez plus de probabilité de ne pas être atteint \n du diabète\n");
         }
         else {
-            monaffichage.append("Donc vous avez plus de chance d'être diabètique\n");
+            monaffichage.append("Vous avez plus de probabilité d'être diabètique\n");
         }
 //        JScrollPane scrollText = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 //        scrollText.add(monaffichage);
