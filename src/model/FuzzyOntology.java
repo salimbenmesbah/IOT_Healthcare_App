@@ -2,6 +2,7 @@ package model;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
+import org.semanticweb.owlapi.io.SystemOutDocumentTarget;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
@@ -57,11 +58,7 @@ public class FuzzyOntology {
             glucose = new ArrayList<String>(), systolic_bp = new ArrayList<String>(), diastolic_bp = new ArrayList<String>(),
             height = new ArrayList<String>(), weight = new ArrayList<String>(), bmi = new ArrayList<String>(),
             waist = new ArrayList<String>(), hip = new ArrayList<String>(), Diagnostic_Final = new ArrayList<String>();
-    //listes de stockage pour la Jtable de la page accueil lors du bouton "Chercher"
-    public ArrayList<String> patient1 = new ArrayList<String>(), age1 = new ArrayList<String>(), gender1 = new ArrayList<String>(), cholesterol1 = new ArrayList<String>(),
-            glucose1 = new ArrayList<String>(), systolic_bp1 = new ArrayList<String>(), diastolic_bp1 = new ArrayList<String>(),
-            height1 = new ArrayList<String>(), weight1 = new ArrayList<String>(), bmi1 = new ArrayList<String>(),
-            waist1 = new ArrayList<String>(), hip1 = new ArrayList<String>(), Diagnostic_Final1 = new ArrayList<String>();
+
 
     //constructeur
     public FuzzyOntology(String link) throws OWLOntologyCreationException {
@@ -73,7 +70,8 @@ public class FuzzyOntology {
         datatypes = new LinkedList<String>();
         fuzzydatatypes = new LinkedList<String>();
 
-        try {
+        try
+        {
             OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 
             ontology = manager.loadOntologyFromOntologyDocument(file);
@@ -82,10 +80,8 @@ public class FuzzyOntology {
             reasonerFactory = new StructuralReasonerFactory();
             reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
             OWLDataFactory df = OWLManager.getOWLDataFactory();
-
-
-        } catch (OWLOntologyCreationException ex) {
         }
+        catch (OWLOntologyCreationException ex) {}
 
 
     }
@@ -226,32 +222,211 @@ public class FuzzyOntology {
 
     public void DELETE(String nameClass, String nameP) throws OWLOntologyCreationException, OWLOntologyStorageException {
         manager = OWLManager.createOWLOntologyManager();
-        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
+        ontology = manager.loadOntologyFromOntologyDocument(file);
         OWLDataProperty dp;
         OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
 
         OWLEntityRemover removerToDeleteAlreadyAssignedInds = new OWLEntityRemover(manager, Collections.singleton(ontology));
-        for (OWLClass cls : ontology.getClassesInSignature()) {
-            if (cls.getIRI().getFragment().equals(nameClass)) {
+        for (OWLClass cls : ontology.getClassesInSignature()) {   //pour chaque classe de l'ontologie
+            //l'instance patient
+            if (cls.getIRI().getFragment().equals(nameClass)) {   //pour selectionner la classe patient
 
                 NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
-                System.out.println("Number of instances of class" + nameClass + " is  " + instances.getFlattened().size());
-                for (OWLNamedIndividual ind : instances.getFlattened()) {
+                System.out.println("suppression du patient en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
                     //je récupére touts les instances de patient
-                    if (ind.getIRI().getFragment().equals(nameP)) {
+                    if (ind.getIRI().getFragment().equals(nameP)) {  // si c'est le patient à supprimer
                         ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
                     }
                 }
-                manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
-                removerToDeleteAlreadyAssignedInds.reset();
-                manager.saveOntology(ontology);
             }
+            //l'instance age du patient
+            if (cls.getIRI().getFragment().equals("Age")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression de l'age en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+
+                    if (ind.getIRI().getFragment().equals("Age_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance du sexe du patient
+            if (cls.getIRI().getFragment().equals("Gender")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du gender en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Sexe_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance de cholesterol du patient
+            if (cls.getIRI().getFragment().equals("Cholesterol")) {   //pour selectionner la classe patient
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du cholesterol en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Cholesterol_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance de glucose du patient
+            if (cls.getIRI().getFragment().equals("Glucose")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du glucose en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Glucose_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance  Systolic_bp patient
+            if (cls.getIRI().getFragment().equals("Systolic_bp")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du systolic bp en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Tension_artérielle_systolique_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance Diastolic_bp patient
+            if (cls.getIRI().getFragment().equals("Diastolic_bp")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du Diastolic_bp en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Tension_artérielle_diastolique_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance Height patient
+            if (cls.getIRI().getFragment().equals("Height")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du Height en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("taille_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance Weight patient
+            if (cls.getIRI().getFragment().equals("Weight")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du Weight en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Poids_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance BMI patient
+            if (cls.getIRI().getFragment().equals("BMI")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du BMI en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("IMC_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance Waist patient
+            if (cls.getIRI().getFragment().equals("Waist")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du Waist en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Tour_de_taille_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+            //l'instance Hip patient
+            if (cls.getIRI().getFragment().equals("Hip")) {   //pour selectionner la classe patient
+
+                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);
+                System.out.println("suppression du Hip en cours");
+                for (OWLNamedIndividual ind : instances.getFlattened()) {  //parcourir chaque individu de la classe patient
+                    //je récupére touts les instances de patient
+                    if (ind.getIRI().getFragment().equals("Tour_de_hanches_patient_"+nameP)) {  // si c'est le patient à supprimer
+                        ind.accept(removerToDeleteAlreadyAssignedInds);
+                        manager.applyChanges(removerToDeleteAlreadyAssignedInds.getChanges());
+                        removerToDeleteAlreadyAssignedInds.reset();
+                        manager.saveOntology(ontology);
+                    }
+                }
+            }
+
         }
     }
 
     public ArrayList<String> getIndividulsByClass(String nameClass) throws Exception {
         ArrayList<String> ip = new ArrayList<String>();
-
+        patient.clear();
+        age.clear();
+        gender.clear();
+        cholesterol.clear();
+        glucose.clear();
+        systolic_bp.clear();
+        diastolic_bp.clear();
+        bmi.clear();
+        height.clear();
+        weight.clear();
+        waist.clear();
+        hip.clear();
+        Diagnostic_Final.clear();
         manager = OWLManager.createOWLOntologyManager();
         OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
         OWLDataProperty dp;
@@ -275,8 +450,9 @@ public class FuzzyOntology {
                         if (ont.getIRI().getFragment().equals("Diagnostic_Final")) {              //selectionner le dataproperty Diagnostic_Final
                             dp = ont;
                             Set<OWLLiteral> values = reasoner.getDataPropertyValues(ind, dp);       //trouver les valeurs de Diagnostic_Final du patient
-                            if (values == null) {
-                                Diagnostic_Final.add(null);
+                            if (values.isEmpty()) {
+                                System.out.print(" \t: Diagnostic_Final = null ");
+                                Diagnostic_Final.add("");
                             }
                             for (OWLLiteral ol : values) {
                                 System.out.print(" \t: Diagnostic_Final = " + ol.getLiteral());
@@ -573,29 +749,7 @@ public class FuzzyOntology {
         return ip;
     }
 
-    public void RechercherPatient(String nameClass, String nameP) throws OWLOntologyCreationException {
-        manager = OWLManager.createOWLOntologyManager();
-        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);            //manager de l'ontologie
-        OWLDataProperty dp;
-        OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);      //reasonner de l'ontologie
-        for (OWLClass cls : ontology.getClassesInSignature()) {
-            if (cls.getIRI().getFragment().equals(nameClass)) {                            // trouver la classe patient
-                NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, false);  // toutes les instances de la classe patient
-                for (OWLNamedIndividual ind : instances.getFlattened()) {
-                    //je récupére touts les instances de patient
-                    if (ind.getIRI().getFragment().equals(nameP)) {                              //trouver l'instance cible c-a-c avec le nom recherché
-                        patient1.add(nameP);                                                   //l'ajouter l'instance à l'array list
-                        System.err.println("" + ind.getIRI().getFragment());
-                        dp = null;
-
-
-                    }
-
-
-                }
-
-
-            }
-        }
-    }
+//    public static void main(String[] args) throws OWLOntologyCreationException {
+//
+//    }
 }

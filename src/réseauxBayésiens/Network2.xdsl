@@ -2,175 +2,207 @@
 <!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
 <smile version="1.0" id="Network3" numsamples="10000" discsamples="10000">
 	<nodes>
-		<cpt id="age">
+		<cpt id="Age">
 			<state id="AgeOld" />
 			<state id="AgeYoung" />
 			<probabilities>0.5723214285714285 0.4276785714285714</probabilities>
 		</cpt>
-		<cpt id="gender">
+		<cpt id="Gender">
 			<state id="female" />
 			<state id="male" />
 			<probabilities>0.4991071428571429 0.5008928571428571</probabilities>
 		</cpt>
-		<cpt id="height">
+		<cpt id="Height">
 			<state id="High_Height" />
 			<state id="Low_Height" />
-			<parents>gender</parents>
-			<probabilities>0.1410714285714286 0.8589285714285714 0.5676156583629893 0.4323843416370107</probabilities>
+			<parents>Gender</parents>
+			<probabilities>0.2517857142857143 0.7482142857142857 0.6708185053380783 0.3291814946619217</probabilities>
 		</cpt>
-		<cpt id="weight">
+		<cpt id="Weight">
 			<state id="High_weight" />
 			<state id="Low_Weight" />
-			<parents>age</parents>
-			<probabilities>0.4973214285714286 0.5026785714285714 0.4973214285714286 0.5026785714285714</probabilities>
+			<parents>Age</parents>
+			<probabilities>0.5623052959501558 0.4376947040498442 0.3604166666666667 0.6395833333333333</probabilities>
 		</cpt>
-		<cpt id="bmi">
+		<cpt id="BMI">
 			<state id="BMIobese" />
 			<state id="BMIslim" />
-			<parents>height weight age</parents>
-			<probabilities>0.7083333333333334 0.2916666666666666 0.7083333333333334 0.2916666666666666 0.005434782608695652 0.9945652173913043 0.005434782608695652 0.9945652173913043 0.9854651162790697 0.01453488372093023 0.9854651162790697 0.01453488372093023 0.1701570680628272 0.8298429319371728 0.1701570680628272 0.8298429319371728</probabilities>
+			<parents>Height Weight Age</parents>
+			<probabilities>0.8647058823529412 0.1352941176470588 0.6929824561403508 0.3070175438596491 0.009259259259259259 0.9907407407407407 0.007575757575757576 0.9924242424242424 0.9948453608247423 0.005154639175257732 0.9838709677419355 0.01612903225806452 0.2670454545454545 0.7329545454545455 0.1853932584269663 0.8146067415730337</probabilities>
 		</cpt>
-		<cpt id="diastolic_bp">
+		<cpt id="Diastolic_bp">
 			<state id="High_diastolic_bp" />
 			<state id="Low_diastolic_bp" />
-			<parents>weight bmi</parents>
-			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<parents>Weight BMI</parents>
+			<probabilities>0.5418410041841004 0.4581589958158995 0.6379310344827586 0.3620689655172414 0.4125 0.5875 0.4411764705882353 0.5588235294117647</probabilities>
 		</cpt>
-		<cpt id="systolic_bp">
+		<cpt id="Systolic_bp">
 			<state id="High_systolic_bp" />
 			<state id="Low_systolic_bp" />
-			<parents>age weight bmi</parents>
-			<probabilities>0.6398601398601399 0.3601398601398602 0.6398601398601399 0.3601398601398602 0.6398601398601399 0.3601398601398602 0.6398601398601399 0.3601398601398602 0.6351351351351352 0.3648648648648649 0.6351351351351352 0.3648648648648649 0.6351351351351352 0.3648648648648649 0.6351351351351352 0.3648648648648649</probabilities>
+			<parents>Age Weight BMI</parents>
+			<probabilities>0.1441176470588235 0.8558823529411764 0.2083333333333333 0.7916666666666666 0.1041666666666667 0.8958333333333333 0.2245762711864407 0.7754237288135594 0.2357142857142857 0.7642857142857142 0.4166666666666666 0.5833333333333333 0.08823529411764705 0.9117647058823529 0.1630434782608696 0.8369565217391305</probabilities>
 		</cpt>
-		<cpt id="glucose">
+		<cpt id="Glucose">
 			<state id="High_Glucose" />
 			<state id="Low_Glucose" />
-			<parents>bmi diastolic_bp systolic_bp age</parents>
-			<probabilities>0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.7325581395348837 0.2674418604651163 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125 0.4296875 0.5703125</probabilities>
+			<parents>BMI Diastolic_bp Systolic_bp Age Weight</parents>
+			<probabilities>0.6578947368421052 0.3421052631578947 0.1666666666666667 0.8333333333333333 0.7352941176470588 0.2647058823529412 0.25 0.75 0.8623188405797102 0.1376811594202899 0.4375 0.5625 0.4464285714285714 0.5535714285714285 0.2142857142857143 0.7857142857142857 0.6428571428571428 0.3571428571428571 0.5 0.5 0.5 0.5 0.5 0.5 0.8269230769230769 0.1730769230769231 0.5666666666666667 0.4333333333333333 0.4629629629629629 0.537037037037037 0.05 0.9500000000000001 0.8333333333333333 0.1666666666666667 0.3823529411764706 0.6176470588235294 0.5625 0.4375 0.6590909090909091 0.3409090909090909 0.6428571428571428 0.3571428571428571 0.3857142857142857 0.6142857142857142 0.125 0.875 0.1071428571428571 0.8928571428571428 0.5 0.5 0.5909090909090909 0.4090909090909091 0.5 0.5 0.25 0.75 0.875 0.125 0.3706896551724138 0.6293103448275862 0.1875 0.8125 0.08666666666666667 0.9133333333333334</probabilities>
 		</cpt>
-		<cpt id="cholesterol">
+		<cpt id="Cholesterol">
 			<state id="High_Cholesterol" />
 			<state id="Low_Cholesterol" />
-			<parents>age glucose</parents>
-			<probabilities>0.6658031088082902 0.3341968911917099 0.6658031088082902 0.3341968911917099 0.4593023255813954 0.5406976744186047 0.4593023255813954 0.5406976744186047</probabilities>
+			<parents>Age Glucose Diastolic_bp Systolic_bp</parents>
+			<probabilities>0.8333333333333333 0.1666666666666667 0.71875 0.28125 0.7727272727272727 0.2272727272727273 0.5103092783505154 0.4896907216494845 0.6052631578947368 0.3947368421052632 0.5270270270270271 0.472972972972973 0.3571428571428571 0.6428571428571428 0.5089285714285714 0.4910714285714285 0.7258064516129032 0.2741935483870968 0.6388888888888888 0.3611111111111111 0.5 0.5 0.375 0.625 0.21875 0.78125 0.3852459016393443 0.6147540983606558 0.25 0.75 0.25 0.7499999999999999</probabilities>
 		</cpt>
-		<cpt id="waist">
+		<cpt id="Waist">
 			<state id="Large_Waist" />
 			<state id="Thin_Waist" />
-			<parents>weight bmi cholesterol</parents>
-			<probabilities>0.8118279569892473 0.1881720430107527 0.8118279569892473 0.1881720430107527 0.8118279569892473 0.1881720430107527 0.8118279569892473 0.1881720430107527 0.1294326241134752 0.8705673758865248 0.1294326241134752 0.8705673758865248 0.1294326241134752 0.8705673758865248 0.1294326241134752 0.8705673758865248</probabilities>
+			<parents>Weight BMI Cholesterol</parents>
+			<probabilities>0.9137931034482758 0.08620689655172414 0.8473684210526315 0.1526315789473684 0.3214285714285714 0.6785714285714285 0.34375 0.65625 0.4375 0.5625 0.3235294117647059 0.6764705882352942 0.1617647058823529 0.8382352941176471 0.06818181818181819 0.9318181818181819</probabilities>
 		</cpt>
-		<cpt id="hip">
+		<cpt id="Hip">
 			<state id="Large_Hip" />
 			<state id="Thin_Hip" />
-			<parents>weight bmi cholesterol age</parents>
-			<probabilities>0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.7759856630824373 0.2240143369175627 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256 0.1117021276595745 0.8882978723404256</probabilities>
+			<parents>Weight BMI Age Glucose Cholesterol</parents>
+			<probabilities>0.8846153846153847 0.1153846153846154 0.87 0.13 0.8409090909090909 0.1590909090909091 0.8500000000000001 0.15 0.8043478260869565 0.1956521739130435 0.9 0.1 0.5416666666666666 0.4583333333333333 0.6739130434782609 0.3260869565217391 0.5833333333333333 0.4166666666666666 0.1 0.9 0.5 0.5 0.5 0.5 0.875 0.125 0.1666666666666667 0.8333333333333333 0.08333333333333333 0.9166666666666666 0.3125 0.6875 0.8500000000000001 0.15 0.8333333333333333 0.1666666666666667 0.2777777777777778 0.7222222222222222 0.7000000000000001 0.3 0.5 0.5 0.25 0.75 0.07142857142857142 0.9285714285714285 0.25 0.75 0.08928571428571427 0.9107142857142857 0.125 0.875 0.015625 0.984375 0.01219512195121951 0.9878048780487805 0.71875 0.28125 0.35 0.65 0.01724137931034483 0.9827586206896551 0.02906976744186046 0.9709302325581395</probabilities>
 		</cpt>
-		<cpt id="diabetes">
+		<cpt id="Diabete_diagnosis">
 			<state id="Yes" />
 			<state id="No" />
-			<parents>waist hip age glucose cholesterol gender</parents>
-			<probabilities>0.9583333333333333 0.04166666666666665 0.9583333333333333 0.04166666666666665 0.75 0.25 0.75 0.25 0.75 0.25 0.75 0.25 0.25 0.75 0.25 0.75 0.9444444444444444 0.05555555555555555 0.9444444444444444 0.05555555555555555 0.875 0.125 0.875 0.125 0.25 0.75 0.25 0.75 0.1 0.9 0.1 0.9 0.8333333333333333 0.1666666666666667 0.8333333333333333 0.1666666666666667 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.75 0.25 0.75 0.25 0.25 0.75 0.25 0.75 0.5 0.5 0.5 0.5 0.75 0.25 0.75 0.25 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.9 0.1 0.9 0.1 0.75 0.25 0.75 0.25 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.75 0.25 0.75 0.25 0.25 0.75 0.25 0.75 0.1666666666666667 0.8333333333333333 0.1666666666666667 0.8333333333333333 0.1666666666666667 0.8333333333333333 0.1666666666666667 0.8333333333333333</probabilities>
+			<parents>Waist Hip Age Glucose Cholesterol Gender</parents>
+			<probabilities>0.9878048780487805 0.01219512195121951 0.9891304347826086 0.0108695652173913 0.90625 0.09375 0.921875 0.078125 0.576923076923077 0.4230769230769231 0.7857142857142857 0.2142857142857143 0.1875 0.8125 0.375 0.625 0.6875 0.3125 0.98 0.02 0.9375 0.0625 0.8333333333333333 0.1666666666666667 0.1 0.9 0.1666666666666667 0.8333333333333333 0.03571428571428571 0.9642857142857142 0.125 0.875 0.875 0.125 0.9166666666666666 0.08333333333333333 0.25 0.75 0.5 0.5 0.25 0.75 0.5 0.5 0.5 0.5 0.125 0.875 0.8333333333333333 0.1666666666666667 0.75 0.25 0.5 0.5 0.75 0.25 0.25 0.75 0.125 0.875 0.125 0.875 0.125 0.875 0.9166666666666666 0.08333333333333333 0.875 0.125 0.5 0.5 0.75 0.25 0.1666666666666667 0.8333333333333333 0.5 0.5 0.1666666666666667 0.8333333333333333 0.5 0.5 0.75 0.25 0.5 0.5 0.75 0.25 0.5 0.5 0.5 0.5 0.5 0.5 0.08333333333333333 0.9166666666666666 0.5 0.5 0.6333333333333333 0.3666666666666666 0.9705882352941176 0.02941176470588235 0.7727272727272727 0.2272727272727273 0.6333333333333333 0.3666666666666666 0.06521739130434782 0.9347826086956521 0.2083333333333333 0.7916666666666666 0.3888888888888888 0.611111111111111 0.1060606060606061 0.8939393939393939 0.75 0.25 0.5 0.5 0.5 0.5 0.375 0.625 0.025 0.9750000000000001 0.1136363636363636 0.8863636363636364 0.0078125 0.9921875 0.01470588235294118 0.9852941176470588</probabilities>
 		</cpt>
 	</nodes>
 	<extensions>
 		<genie version="1.0" app="GeNIe 3.0.6518.0 ACADEMIC" name="Network3">
-			<node id="age">
-				<name>age</name>
+			<node id="Age">
+				<name>Age</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>956 69 1004 99</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>908 21 1026 78</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="height">
-				<name>height</name>
+			<node id="Height">
+				<name>Height</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>380 101 428 131</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>380 21 476 78</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="cholesterol">
-				<name>cholesterol</name>
+			<node id="Cholesterol">
+				<name>Cholesterol</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>1115 474 1163 504</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>1054 474 1163 543</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="glucose">
-				<name>glucose</name>
+			<node id="Glucose">
+				<name>Glucose</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>1484 294 1532 324</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>1448 332 1562 400</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="systolic_bp">
-				<name>systolic_bp</name>
+			<node id="Systolic_bp">
+				<name>Systolic_bp</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>1567 159 1615 189</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>1451 21 1562 87</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="diastolic_bp">
-				<name>diastolic_bp</name>
+			<node id="Diastolic_bp">
+				<name>Diastolic_bp</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>1169 247 1217 277</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>1071 215 1177 284</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="bmi">
-				<name>bmi</name>
+			<node id="BMI">
+				<name>BMI</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>532 333 580 363</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>471 329 575 389</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="weight">
-				<name>weight</name>
+			<node id="Weight">
+				<name>Weight</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>69 379 117 409</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>52 191 166 253</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="gender">
-				<name>gender</name>
+			<node id="Gender">
+				<name>Gender</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>667 50 715 80</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>667 21 775 73</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="waist">
-				<name>waist</name>
+			<node id="Waist">
+				<name>Waist</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>257 609 309 641</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>52 452 153 509</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="hip">
-				<name>hip</name>
+			<node id="Hip">
+				<name>Hip</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>573 588 625 620</position>
+				<font color="000000" name="Arial" size="12" />
+				<position>469 525 576 586</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="diabetes">
-				<name>diabetes</name>
+			<node id="Diabete_diagnosis">
+				<name>Diabete_diagnosis</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>828 765 880 797</position>
-				<barchart active="true" />
+				<font color="000000" name="Arial" size="12" />
+				<position>776 765 880 834</position>
+				<barchart active="true" width="128" height="66" />
 			</node>
+			<arcformat parent="Gender" child="Height" width="1" color="000080" />
+			<arcformat parent="Age" child="Weight" width="1" color="a0a0a0" />
+			<arcformat parent="Height" child="BMI" width="1" color="000080" />
+			<arcformat parent="Weight" child="BMI" width="1" color="000080" />
+			<arcformat parent="Age" child="BMI" width="1" color="a0a0a0" />
+			<arcformat parent="Weight" child="Diastolic_bp" width="1" color="a0a0a0" />
+			<arcformat parent="BMI" child="Diastolic_bp" width="1" color="a0a0a0" />
+			<arcformat parent="Age" child="Systolic_bp" width="1" color="000080" />
+			<arcformat parent="Weight" child="Systolic_bp" width="1" color="a0a0a0" />
+			<arcformat parent="BMI" child="Systolic_bp" width="1" color="a0a0a0" />
+			<arcformat parent="BMI" child="Glucose" width="1" color="000080" />
+			<arcformat parent="Diastolic_bp" child="Glucose" width="1" color="a0a0a0" />
+			<arcformat parent="Systolic_bp" child="Glucose" width="1" color="a0a0a0" />
+			<arcformat parent="Age" child="Glucose" width="1" color="a0a0a0" />
+			<arcformat parent="Weight" child="Glucose" width="1" color="a0a0a0" />
+			<arcformat parent="Age" child="Cholesterol" width="1" color="000080" />
+			<arcformat parent="Glucose" child="Cholesterol" width="1" color="a0a0a0" />
+			<arcformat parent="Diastolic_bp" child="Cholesterol" width="1" color="a0a0a0" />
+			<arcformat parent="Systolic_bp" child="Cholesterol" width="1" color="a0a0a0" />
+			<arcformat parent="Weight" child="Waist" width="1" color="000080" />
+			<arcformat parent="BMI" child="Waist" width="1" color="a0a0a0" />
+			<arcformat parent="Cholesterol" child="Waist" width="1" color="a0a0a0" />
+			<arcformat parent="Weight" child="Hip" width="1" color="000080" />
+			<arcformat parent="BMI" child="Hip" width="1" color="a0a0a0" />
+			<arcformat parent="Age" child="Hip" width="1" color="a0a0a0" />
+			<arcformat parent="Glucose" child="Hip" width="1" color="a0a0a0" />
+			<arcformat parent="Cholesterol" child="Hip" width="1" color="a0a0a0" />
+			<arcformat parent="Waist" child="Diabete_diagnosis" width="1" color="000080" />
+			<arcformat parent="Hip" child="Diabete_diagnosis" width="1" color="000080" />
+			<arcformat parent="Age" child="Diabete_diagnosis" width="1" color="000080" />
+			<arcformat parent="Glucose" child="Diabete_diagnosis" width="1" color="000080" />
+			<arcformat parent="Cholesterol" child="Diabete_diagnosis" width="1" color="000080" />
 		</genie>
 	</extensions>
 </smile>

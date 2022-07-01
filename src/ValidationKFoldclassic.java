@@ -237,7 +237,7 @@ public class ValidationKFoldclassic {
 
 
 
-        for (int fold=2;fold<=12;fold++){ // on applique fold fois l'agorithme de kfold
+        for (int fold=2;fold<=10;fold++){ // on applique fold fois l'agorithme de kfold
             Network Net = new Network();
             Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network2.xdsl");
             ValidationKFoldclassic c=new ValidationKFoldclassic("D:\\dataset\\NotreDT_ordonée_nominale.csv",

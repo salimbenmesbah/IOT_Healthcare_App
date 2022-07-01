@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.*;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -17,10 +18,11 @@ import javax.swing.*;
 public class AjouterPatientController {
     private AjouterPatient ap;
     private Patient patient;
-    public AjouterPatientController(AjouterPatient ap) {
+    public AjouterPatientController(AjouterPatient ap){
         this.ap=ap; this.patient= new Patient();
     }
     public void initControlleur() {
+        ap.getImc().setEditable(false);
         //pour ajouter un patient
         ap.getAjouter().addMouseListener(new MouseAdapter() {
             @Override
@@ -29,7 +31,7 @@ public class AjouterPatientController {
                 String nom_patient,age,sexe,cholesterol,glucose,tas,tad,taille,poids,imc,tt,th;
                 nom_patient=ap.getNom().getText().toString();
                 age=ap.getAge().getText().toString();
-                sexe=ap.getSexe().getSelectedItem().toString();
+                sexe= Objects.requireNonNull(ap.getSexe().getSelectedItem()).toString();
                 cholesterol=ap.getChol().getText().toString();
                 glucose= ap.getGlu().getText().toString();
                 tas=ap.getTas().getText().toString();
@@ -39,7 +41,7 @@ public class AjouterPatientController {
                 imc=ap.getImc().getText().toString();
                 tt=ap.getTt().getText().toString();
                 th=ap.getTh().getText().toString();
-                //Stocker ces infos dans un patient (celui qui est instancié lors du constructeur)
+                //Stocker ces infos dans un patient qui sera ajouté
                 patient.setNom_patient(nom_patient);
                 patient.setAge(age);
                 patient.setSexe(sexe);
@@ -52,32 +54,26 @@ public class AjouterPatientController {
                 patient.setImc(imc);
                 patient.setTt(tt);
                 patient.setTh(th);
+                {
+                    try {
+                        patient.AddToOntology();
+                        JOptionPane.showMessageDialog(null, "Patient ajouté!", "Information", JOptionPane.INFORMATION_MESSAGE);
 
-                try {
-                    patient.AddToOntology();
-                    JOptionPane.showMessageDialog(null, "Patient ajouté!","Information",JOptionPane.INFORMATION_MESSAGE);
-
-                } catch (OWLOntologyStorageException ex) {
-                    JOptionPane.showMessageDialog(null, "Revoyez vos attributs","Erreur",JOptionPane.ERROR_MESSAGE);
-                } catch (OWLOntologyCreationException ex) {
-                    throw new RuntimeException(ex);
+                    } catch (OWLOntologyStorageException ex) {
+                        JOptionPane.showMessageDialog(null, "Revoyez vos attributs", "Erreur", JOptionPane.ERROR_MESSAGE);
+                    } catch (OWLOntologyCreationException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             }
         });
         ap.getAccueil().addMouseListener(new MouseAdapter() {  //Modifier les informations du patient dans l'ontologie lorsqu'on clique sur le bouton "Modifier",
             //remplacer getAjouter()par getModifier()
             public void mouseClicked(MouseEvent ev) {
-                AcceuilPage mnv=new AcceuilPage();
-                AcceuilPageController c;
-                try {
-                    c = new AcceuilPageController(mnv);
-                    ap.setVisible(false);
-                    c.initControlleur();
-                } catch (Exception ex) {
-                    Logger.getLogger(AjouterPatientController.class.getName()).log(Level.SEVERE, null, ex);
+                ap.setVisible(false);
                 }
             }
-        });
+        );
         ///////////
         ap.getNom().addKeyListener(new KeyAdapter() {
             public void keyReleased (KeyEvent ev) {
@@ -154,6 +150,19 @@ public class AjouterPatientController {
                     JOptionPane.showMessageDialog(null, "la taille ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
                     ap.getTaille().setText("");
                 }
+                //code calcul automatique du bmi
+                else
+                {
+                    if((!Objects.equals(ap.getTaille().getText(), ""))) //si le champ n'est pas vide
+                    {
+                        if (Objects.equals(ap.getPoids().getText(), "")) {
+                        ap.getImc().setText("");
+                        }
+                        else
+                        { double bmicalcule = Double.parseDouble(ap.getPoids().getText()) / Math.pow((Double.parseDouble(ap.getTaille().getText()) * 0.01), 2);
+                        ap.getImc().setText(String.valueOf(bmicalcule));ap.getImc().setEditable(false);}
+                    }
+                }
             }
         });
         //////////////////////////////////////////////////////
@@ -164,6 +173,15 @@ public class AjouterPatientController {
                         || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
                     JOptionPane.showMessageDialog(null, "le poids ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
                     ap.getPoids().setText("");
+                }
+              //code calcul automatique du bmi
+                else
+                {
+                    if(!Objects.equals(ap.getPoids().getText(), "")){ //si le champ n'est pas vide
+                     if(Objects.equals(ap.getTaille().getText(), "")){ap.getImc().setText("");}
+                     else{double bmicalcule = Double.parseDouble(ap.getPoids().getText())/Math.pow((Double.parseDouble(ap.getTaille().getText())*0.01),2);
+                        ap.getImc().setText(String.valueOf(bmicalcule));ap.getImc().setEditable(false);}
+                    }
                 }
             }
         });

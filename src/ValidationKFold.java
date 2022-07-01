@@ -48,8 +48,8 @@ public class ValidationKFold {
         Fuzzification f = new Fuzzification();//Là je règle les fonctions d'appartenance pour les etats des noeuds du réseau bayésien pourle rendre flou
         //ajouter var floue age
         InputVariable Age = f.createFuzzyNode("Age", 19, 92);
-        f.addFuzzyState(Age, new Trapezoid("AgeYoung", 15, 15, 35, 61));
-        f.addFuzzyState(Age, new Trapezoid("AgeOld", 35, 61, 92, 92));
+        f.addFuzzyState(Age, new Trapezoid("AgeYoung", 15, 15, 31, 65));
+        f.addFuzzyState(Age, new Trapezoid("AgeOld", 31, 65, 92, 92));
 
         //ajouter var floue cholesterol
         InputVariable Cholesterol = f.createFuzzyNode("Cholesterol", 78, 443);
@@ -81,17 +81,17 @@ public class ValidationKFold {
         f.addFuzzyState(Weight, new Trapezoid("High_Weight", 69,98, 150, 150));
 
         //ajouter var floue imc
-        InputVariable BMI = f.createFuzzyNode("BMI", 15.2, 55.8);
+        InputVariable BMI = f.createFuzzyNode("BMI", 15.2, 56);
         f.addFuzzyState(BMI, new Trapezoid("BMIslim", 15, 15, 24, 34));
         f.addFuzzyState(BMI, new Trapezoid("BMIobese", 24, 34, 56, 56));
 
         //ajouter var floue tt
-        InputVariable Waist = f.createFuzzyNode("Waist", 26, 56);
+        InputVariable Waist = f.createFuzzyNode("Waist", 26, 60);
         f.addFuzzyState(Waist, new Trapezoid("Thin_Waist", 26, 26, 32, 43));
         f.addFuzzyState(Waist, new Trapezoid("Large_Waist", 32, 43, 60, 60));
 
         //ajouter var floue th
-        InputVariable Hip = f.createFuzzyNode("Hip", 30, 64);
+        InputVariable Hip = f.createFuzzyNode("Hip", 30, 69);
         f.addFuzzyState(Hip, new Trapezoid("Thin_Hip", 30, 30, 41, 47));
         f.addFuzzyState(Hip, new Trapezoid("Large_Hip", 41, 47, 69, 69));
         Scanner scanner;
@@ -370,7 +370,7 @@ public class ValidationKFold {
 
 
 
-        for (int fold=2;fold<=12;fold++){ // on applique fold fois l'agorithme de kfold
+        for (int fold=2;fold<=10;fold++){ // on applique fold fois l'agorithme de kfold
             Network Net = new Network();
             Net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network2.xdsl");
             ValidationKFold c=new ValidationKFold("D:\\dataset\\NotreDT_ordonée1.csv",

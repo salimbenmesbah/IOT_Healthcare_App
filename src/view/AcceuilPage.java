@@ -41,21 +41,12 @@ public class AcceuilPage extends JFrame{
         panel.add(recherche);
         recherche.setColumns(10);
 
-        String [] ent = {"Produit","Prix"};
-        Object [][] data  = {{"PCqs1","30"},{"PCas","30"},{"PQSQC","30"},{"ADPQSQC","30"},{"SDPQSQC","30"},{"QSDPQSQC","30"},{"VCPQSQC","30"}};
-        JScrollPane scrollPane = new JScrollPane();
+        JScrollPane scrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setBounds(20, 226, 814, 200);
         panel.add(scrollPane);
 
         table = new JTable();
-
-
         scrollPane.setViewportView(table);
-        //	DefaultTableModel model = new DefaultTableModel();
-        //   model.addColumn("Test");
-        //  Object [] a = {"a","b","c","d","e","f","g","e","h","i","g","cs","abc"};
-        //  model.addRow(new Object[]{"a","b","c","d","e","f","g","e","h","i","g","cs","abc"});
-        // table.setModel(model);
 
         modifier = new JButton("Modifier");
         modifier.setBounds(535, 94, 100, 40);

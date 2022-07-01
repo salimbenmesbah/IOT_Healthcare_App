@@ -129,7 +129,7 @@ public class AjouterPatient extends JFrame {
         paneln.add(age);
 
         sexe = new JComboBox();
-        sexe.setModel(new DefaultComboBoxModel(new String[] {"Homme", "Femme"}));
+        sexe.setModel(new DefaultComboBoxModel(new String[] {"male", "female"}));
         sexe.setFont(new Font("/Fonts/Roboto-Medium.ttf", Font.BOLD, 12));
         sexe.setBounds(103, 217, 164, 29);
         paneln.add(sexe);

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1656341633322" name="http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="OntologieFinale.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1656341633322" name="shadowed:http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="out/production/PFE_Master/OntologieFinale.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1656341633322" name="shadowed:http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="out/production/PFE_Master/ontologie/OntologieFinale.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1656341633322" name="shadowed:http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="src/OntologieFinale.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1656341633322" name="shadowed:http://www.semanticweb.org/pc-service/ontologies/2022/4/untitled-ontology-115" uri="src/ontologie/OntologieFinale.owl"/>
+    </group>
+</catalog>

@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class DataSetchargement {
     public static void main(String[] args) throws FileNotFoundException, OWLOntologyCreationException, OWLOntologyStorageException {
-        String csvPath= "D:\\dataset\\NotreDT_ordonée.csv";
+        String csvPath= "D:\\dataset\\NotreDT_ordonée1.csv";
         int i=1;
         try {
             BufferedReader lineReader = new BufferedReader(new FileReader(csvPath)); //ouvrir et lire dataset

@@ -18,22 +18,24 @@ public class Main {
 //        frame.setVisible(true);
 //        AjouterPatient frame2 = new AjouterPatient();
 //        frame2.setVisible(true);
-          //AcceuilPage frame3 = new AcceuilPage();
-          //frame3.setVisible(true);
-         // AcceuilPageController  frame3controlleur = new AcceuilPageController(frame3);
-          //frame3controlleur.initControlleur();
+
+          AcceuilPage frame3 = new AcceuilPage();
+          frame3.setVisible(true);
+          AcceuilPageController  frame3controlleur = new AcceuilPageController(frame3);
+          frame3controlleur.initControlleur();
+
 //        ModifierPatient frame4 = new ModifierPatient();
 //        frame4.setVisible(true);
 //          prediction frame5 = new prediction(new double[]{0.00, 1.00});
 //          frame5.setVisible(true);
-          java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                prediction frame = new prediction(new double[]{0.65345, 0.44232});
-                //AcceuilPage frame = new AcceuilPage();
-                //ModifierPatient frame = new ModifierPatient();
-                frame.setVisible(true);
-            }
-          });
+//          java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                AjouterPatient frame = new AjouterPatient();
+//                //AcceuilPage frame = new AcceuilPage();
+//                //ModifierPatient frame = new ModifierPatient();
+//                frame.setVisible(true);
+//            }
+//          });
 
 
     }

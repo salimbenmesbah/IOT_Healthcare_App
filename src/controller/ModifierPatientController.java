@@ -37,7 +37,6 @@ public class ModifierPatientController {
         if (Objects.equals(patient.getSexe(), "FEMALE")) {
             modifier_infos.getSexe().setSelectedIndex(1);
         }
-        //modifier_infos.getSexe().setSelectedIndex(1);
         modifier_infos.getChol().setText(patient.getChol());
         modifier_infos.getGlu().setText(patient.getGlu());
         modifier_infos.getTas().setText(patient.getTas());
@@ -52,7 +51,8 @@ public class ModifierPatientController {
             //remplacer getAjouter()par getModifier()
             public void mouseClicked(MouseEvent ev) {
                 FuzzyOntology NotreOntologie = null;
-                String nom_patient, age, sexe, cholesterol, glucose, tas, tad, taille, poids, imc, tt, th;// prendre les infos des TextFields actuels
+                String nom_patient, age, sexe, cholesterol, glucose, tas, tad, taille, poids, imc, tt, th;
+                // prendre les infos des TextFields actuels
                 nom_patient = modifier_infos.getNom().getText().toString();
                 age = modifier_infos.getAge().getText().toString();
                 sexe = modifier_infos.getSexe().getSelectedItem().toString();
@@ -65,19 +65,20 @@ public class ModifierPatientController {
                 imc = modifier_infos.getImc().getText().toString();
                 tt = modifier_infos.getTt().getText().toString();
                 th = modifier_infos.getTh().getText().toString();
-                //enregistrer ces infos dans les attributs de la classe patient
-                patient.setNom_patient(nom_patient);
-                patient.setAge(age);
-                patient.setSexe(sexe);
-                patient.setChol(cholesterol);
-                patient.setGlu(glucose);
-                patient.setTas(tas);
-                patient.setTad(tad);
-                patient.setTaille(taille);
-                patient.setPoids(poids);
-                patient.setImc(imc);
-                patient.setTt(tt);
-                patient.setTh(th);
+                //enregistrer ces infos dans les attributs de la classe du nouveau patient issu de la modification
+                Patient p2 =  new Patient();
+                p2.setNom_patient(nom_patient);
+                p2.setAge(age);
+                p2.setSexe(sexe);
+                p2.setChol(cholesterol);
+                p2.setGlu(glucose);
+                p2.setTas(tas);
+                p2.setTad(tad);
+                p2.setTaille(taille);
+                p2.setPoids(poids);
+                p2.setImc(imc);
+                p2.setTt(tt);
+                p2.setTh(th);
 
                 try {//chargement de l'ontologie
                     NotreOntologie = new FuzzyOntology("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\ontologie\\OntologieFinale.owl");
@@ -86,12 +87,12 @@ public class ModifierPatientController {
                 }
                 try {//Supprimer l'ancien patient
                     if (NotreOntologie != null)
-                        NotreOntologie.DELETE("Patient", patient.getNom_patient());
+                        NotreOntologie.DELETE("patient", patient.getNom_patient());
                 } catch (OWLOntologyCreationException | OWLOntologyStorageException e) {
                     Logger.getLogger(ModifierPatientController.class.getName()).log(Level.SEVERE, null, e);
                 }
                 try { // rajouter le nouveau patient
-                    patient.AddToOntology();
+                    p2.AddToOntology();
                 } catch (OWLOntologyStorageException | OWLOntologyCreationException e) {
                     Logger.getLogger(ModifierPatientController.class.getName()).log(Level.SEVERE, null, e);
                 }// notifier que la patient a bien été modifié
@@ -105,15 +106,7 @@ public class ModifierPatientController {
         modifier_infos.getAccueil().addMouseListener(new MouseAdapter() {  //Modifier les informations du patient dans l'ontologie lorsqu'on clique sur le bouton "Modifier",
             //remplacer getAjouter()par getModifier()
             public void mouseClicked(MouseEvent ev) {
-                AcceuilPage mnv=new AcceuilPage();
-                AcceuilPageController c;
-                try {
-                    c = new AcceuilPageController(mnv);
-                    modifier_infos.setVisible(false);
-                    c.initControlleur();
-                } catch (Exception ex) {
-                    Logger.getLogger(AjouterPatientController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                modifier_infos.setVisible(false);
             }
         });
 
@@ -193,6 +186,19 @@ public class ModifierPatientController {
                     JOptionPane.showMessageDialog(null, "la taille ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
                     modifier_infos.getTaille().setText("");
                 }
+                //code calcul automatique du bmi
+                else
+                {
+                    if((!Objects.equals(modifier_infos.getTaille().getText(), ""))) //si le champ n'est pas vide
+                    {
+                        if (Objects.equals(modifier_infos.getPoids().getText(), "")) {
+                            modifier_infos.getImc().setText("");
+                        }
+                        else
+                        { double bmicalcule = Double.parseDouble(modifier_infos.getPoids().getText()) / Math.pow((Double.parseDouble(modifier_infos.getTaille().getText()) * 0.01), 2);
+                            modifier_infos.getImc().setText(String.valueOf(bmicalcule));modifier_infos.getImc().setEditable(false);}
+                    }
+                }
             }
         });
         //////////////////////////////////////////////////////
@@ -203,6 +209,15 @@ public class ModifierPatientController {
                         || ev.getKeyCode() == KeyEvent.VK_X || ev.getKeyCode() == KeyEvent.VK_C || ev.getKeyCode() == KeyEvent.VK_V || ev.getKeyCode() == KeyEvent.VK_B || ev.getKeyCode() == KeyEvent.VK_N ){
                     JOptionPane.showMessageDialog(null, "le poids ne contient pas des lettres","Error",JOptionPane.ERROR_MESSAGE);
                     modifier_infos.getPoids().setText("");
+                }
+                //code calcul automatique du bmi
+                else
+                {
+                    if(!Objects.equals(modifier_infos.getPoids().getText(), "")){ //si le champ n'est pas vide
+                        if(Objects.equals(modifier_infos.getTaille().getText(), "")){modifier_infos.getImc().setText("");}
+                        else{double bmicalcule = Double.parseDouble(modifier_infos.getPoids().getText())/Math.pow((Double.parseDouble(modifier_infos.getTaille().getText())*0.01),2);
+                            modifier_infos.getImc().setText(String.valueOf(bmicalcule));modifier_infos.getImc().setEditable(false);}
+                    }
                 }
             }
         });

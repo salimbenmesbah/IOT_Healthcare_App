@@ -1,6 +1,7 @@
 package controller;
 
 import model.Patient;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import smile.License;
 import smile.Network;
@@ -13,6 +14,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,32 +22,35 @@ public class InferencePatientController {
     private InferencePatient inferencePatient;
     private Patient patient;
     Network net;
-    public static License Notrelicense = new smile.License(
+    static smile.License NotreLicense = new smile.License(
             "SMILE LICENSE d41161b6 8b72612c ed417b5a " +
-                    "THIS IS AN ACADEMIC LICENSE AND CAN BE USED " +
-                    "SOLELY FOR ACADEMIC RESEARCH AND TEACHING, " +
-                    "AS DEFINED IN THE BAYESFUSION ACADEMIC " +
-                    "SOFTWARE LICENSING AGREEMENT. " +
-                    "Serial #: en05exaj9ztpxsp2znslb6es6 " +
-                    "Issued for: ta meree (laughoutloudly417@gmail.com) " +
-                    "Academic institution: Saad dahleb Blida1 " +
-                    "Valid until: 2022-11-24 " +
-                    "Issued by BayesFusion activation server",
-            new byte[]
-                    {
-                            -116,120,-3,100,57,-127,27,-41,10,19,4,-86,-88,-126,-15,86,
-                            -47,59,-93,-127,-3,-101,-56,-63,-100,75,11,-32,86,107,-91,53,
-                            -30,82,42,-14,-34,-118,-103,-79,22,-128,-51,1,96,53,119,38,
-                            80,54,58,-1,107,-47,-26,42,49,64,100,38,-115,-121,111,27
-                    }
-    );
+            "THIS IS AN ACADEMIC LICENSE AND CAN BE USED " +
+            "SOLELY FOR ACADEMIC RESEARCH AND TEACHING, " +
+            "AS DEFINED IN THE BAYESFUSION ACADEMIC " +
+            "SOFTWARE LICENSING AGREEMENT. " +
+            "Serial #: en05exaj9ztpxsp2znslb6es6 " +
+            "Issued for: ta meree (laughoutloudly417@gmail.com) " +
+            "Academic institution: Saad dahleb Blida1 " +
+            "Valid until: 2022-11-24 " +
+            "Issued by BayesFusion activation server",
+            new byte[] {
+        -116,120,-3,100,57,-127,27,-41,10,19,4,-86,-88,-126,-15,86,
+                -47,59,-93,-127,-3,-101,-56,-63,-100,75,11,-32,86,107,-91,53,
+                -30,82,42,-14,-34,-118,-103,-79,22,-128,-51,1,96,53,119,38,
+                80,54,58,-1,107,-47,-26,42,49,64,100,38,-115,-121,111,27
+    }
+        );
+
+
+
     public InferencePatientController(InferencePatient inferencePatient,Patient patient){
         this.inferencePatient=inferencePatient;
         this.patient=patient;
-            System.loadLibrary("jsmile");
-            Network net = new Network();
-            // load the network created by Tutorial1
-            net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\RéseauBayesienClassique2.xdsl");
+
+        System.loadLibrary("jsmile");
+        // load the network created by Tutorial1
+        net = new Network();
+        net.readFile("C:\\Users\\PC-Service\\IdeaProjects\\IOT_Healthcare_App\\src\\réseauxBayésiens\\Network2.xdsl");
 
     }
     public void initController(){
@@ -68,18 +73,18 @@ public class InferencePatientController {
         inferencePatient.getInferer().addMouseListener(new MouseAdapter() {  //recuperer les elements dans un noeud
             public void mouseClicked (MouseEvent ev) {
                 String nom_patient,age,sexe,cholesterol,glucose,tas,tad,taille,poids,imc,tt,th;// prendre les infos des TextFields actuels
-                nom_patient=inferencePatient.getNom().getText().toString();
-                age=inferencePatient.getAge().getText().toString();
-                sexe=inferencePatient.getSexe().getSelectedItem().toString();
-                cholesterol=inferencePatient.getChol().getText().toString();
-                glucose= inferencePatient.getGlu().getText().toString();
-                tas=inferencePatient.getTas().getText().toString();
-                tad=inferencePatient.getTad().getText().toString();
-                taille=inferencePatient.getTaille().getText().toString();
-                poids=inferencePatient.getPoids().getText().toString();
-                imc=inferencePatient.getImc().getText().toString();
-                tt=inferencePatient.getTt().getText().toString();
-                th=inferencePatient.getTh().getText().toString();
+                nom_patient= inferencePatient.getNom().getText();
+                age= inferencePatient.getAge().getText();
+                sexe= Objects.requireNonNull(inferencePatient.getSexe().getSelectedItem()).toString();
+                cholesterol= inferencePatient.getChol().getText();
+                glucose= inferencePatient.getGlu().getText();
+                tas= inferencePatient.getTas().getText();
+                tad= inferencePatient.getTad().getText();
+                taille= inferencePatient.getTaille().getText();
+                poids= inferencePatient.getPoids().getText();
+                imc= inferencePatient.getImc().getText();
+                tt= inferencePatient.getTt().getText();
+                th= inferencePatient.getTh().getText();
                 //enregistrer ces infos dans les attributs de la classe patient
                 patient.setNom_patient(nom_patient);
                 patient.setAge(age);
@@ -95,7 +100,7 @@ public class InferencePatientController {
                 patient.setTh(th);
                 try {
                     patient.FuzzificationPatient(net);
-                } catch (OWLOntologyStorageException e) {
+                } catch (OWLOntologyStorageException | OWLOntologyCreationException e) {
                     throw new RuntimeException(e);
                 }
                 double[] resultat = patient.getResultat();
@@ -108,17 +113,7 @@ public class InferencePatientController {
     });
         inferencePatient.getAccueil().addMouseListener(new MouseAdapter() {  //Modifier les informations du patient dans l'ontologie lorsqu'on clique sur le bouton "Modifier",
             //remplacer getAjouter()par getModifier()
-            public void mouseClicked(MouseEvent ev) {
-                AcceuilPage mnv=new AcceuilPage();
-                AcceuilPageController c;
-                try {
-                    c = new AcceuilPageController(mnv);
-                    inferencePatient.setVisible(false);
-                    c.initControlleur();
-                } catch (Exception ex) {
-                    Logger.getLogger(AjouterPatientController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            public void mouseClicked(MouseEvent ev) {inferencePatient.setVisible(false);}
         });
         /////////
         inferencePatient.getNom().addKeyListener(new KeyAdapter() {
